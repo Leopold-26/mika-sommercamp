@@ -33,6 +33,13 @@ This repo is a Codex plugin marketplace. Codex reads:
 - `plugins/mika-sommercamp/references/`
 - `plugins/mika-sommercamp/templates/project/`
 
+It also includes the ready-to-send delivery files:
+
+- `dist/mika-founder-one-pager.pdf`
+- `dist/mika-team-explainer.pdf`
+- `dist/mika-sommercamp-plugin.zip`
+- `dist/mika-sommercamp-starter.zip`
+
 The marketplace name is `gruenderszene-sommercamp`.
 
 The plugin name is `mika-sommercamp`.

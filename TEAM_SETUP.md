@@ -33,7 +33,8 @@ Send:
 
 1. GitHub repo link: `https://github.com/Leopold-26/mika-sommercamp`
 2. Founder instructions: [INSTALL_FOR_FOUNDERS.md](INSTALL_FOR_FOUNDERS.md)
-3. Optional one-pager PDF generated locally in `dist/mika-founder-one-pager.pdf`
+3. Optional one-pager PDF: `dist/mika-founder-one-pager.pdf`
+4. Optional team PDF: `dist/mika-team-explainer.pdf`
 
 Do not send local `codex://...marketplacePath=/Users/...` links. They only work on the creator's laptop.
 

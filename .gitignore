@@ -4,8 +4,13 @@ node_modules/
 .env.*
 !.env.example
 dist/
+!dist/
+dist/*
+!dist/mika-founder-one-pager.pdf
+!dist/mika-team-explainer.pdf
+!dist/mika-sommercamp-plugin.zip
+!dist/mika-sommercamp-starter.zip
 build/
 .next/
 .vercel/
 coverage/
-
