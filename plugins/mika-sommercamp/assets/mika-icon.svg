@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Mika Sommercamp Icon</title>
+  <desc id="desc">A Gründerszene-inspired purple assistant icon with a chat mark, app blocks, and a lime launch spark.</desc>
+  <defs>
+    <linearGradient id="bg" x1="80" x2="944" y1="944" y2="80" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#240046"/>
+      <stop offset="0.48" stop-color="#5F00D9"/>
+      <stop offset="1" stop-color="#8A00FF"/>
+    </linearGradient>
+    <linearGradient id="tile" x1="196" x2="812" y1="788" y2="188" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F3E9FF"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="22" dy="28" stdDeviation="0" flood-color="#050505" flood-opacity="0.92"/>
+    </filter>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="26" flood-color="#120020" flood-opacity="0.38"/>
+    </filter>
+    <clipPath id="round">
+      <rect x="64" y="64" width="896" height="896" rx="196"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#round)">
+    <rect x="64" y="64" width="896" height="896" rx="196" fill="url(#bg)"/>
+    <path d="M64 192H960M64 320H960M64 448H960M64 576H960M64 704H960M64 832H960M192 64V960M320 64V960M448 64V960M576 64V960M704 64V960M832 64V960" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="3"/>
+    <circle cx="812" cy="218" r="100" fill="#D7FF00"/>
+    <path d="M774 258L846 186M846 186H788M846 186V244" stroke="#050505" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <g filter="url(#shadow)">
+      <path d="M286 270H634C706 270 758 322 758 394V560C758 632 706 684 634 684H492L338 798V684H286C214 684 162 632 162 560V394C162 322 214 270 286 270Z" fill="url(#tile)"/>
+      <rect x="268" y="386" width="108" height="108" rx="32" fill="#7A00FF"/>
+      <rect x="432" y="386" width="108" height="108" rx="32" fill="#050505"/>
+      <rect x="596" y="386" width="72" height="108" rx="32" fill="#7A00FF"/>
+      <rect x="268" y="546" width="108" height="64" rx="28" fill="#050505"/>
+      <rect x="432" y="546" width="236" height="64" rx="28" fill="#7A00FF"/>
+    </g>
+
+    <g filter="url(#soft)">
+      <circle cx="728" cy="682" r="86" fill="#D7FF00"/>
+      <path d="M686 682H770M728 640V724" stroke="#050505" stroke-width="28" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

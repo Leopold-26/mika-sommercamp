@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mika Sommercamp One-Pager</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      :root {
+        --black: #050505;
+        --ink: #141414;
+        --muted: #666;
+        --line: #d8d8d8;
+        --paper: #f4f1ec;
+        --white: #fff;
+        --accent: #ff4f00;
+      }
+
+      body {
+        margin: 0;
+        background: #ddd;
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .page {
+        width: 210mm;
+        height: 297mm;
+        margin: 0 auto;
+        background: var(--paper);
+        position: relative;
+        overflow: hidden;
+        padding: 15mm 16mm 13mm;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 3px solid var(--black);
+        padding-bottom: 8px;
+        margin-bottom: 18px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: 800;
+      }
+
+      .brand {
+        display: flex;
+        gap: 9px;
+        align-items: center;
+      }
+
+      .mark {
+        width: 18px;
+        height: 18px;
+        background: var(--black);
+        position: relative;
+      }
+
+      .mark::after {
+        content: "";
+        position: absolute;
+        right: -6px;
+        bottom: -6px;
+        width: 11px;
+        height: 11px;
+        background: var(--accent);
+      }
+
+      h1 {
+        font-size: 66px;
+        line-height: 0.88;
+        margin: 0 0 12px;
+        letter-spacing: -0.035em;
+        text-transform: uppercase;
+        font-weight: 900;
+      }
+
+      .dek {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 18px;
+        align-items: end;
+        margin-bottom: 18px;
+      }
+
+      .dek p {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.35;
+        font-weight: 700;
+      }
+
+      .tag {
+        background: var(--black);
+        color: var(--white);
+        padding: 12px;
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 1.1;
+        font-weight: 900;
+        letter-spacing: 0.02em;
+      }
+
+      .linkbox {
+        border: 3px solid var(--black);
+        background: var(--white);
+        padding: 14px;
+        margin-bottom: 18px;
+      }
+
+      .label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 900;
+        margin-bottom: 6px;
+      }
+
+      .linkline {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .placeholder {
+        flex: 1;
+        border: 2px dashed var(--black);
+        padding: 12px;
+        min-height: 43px;
+        font-family: "Courier New", monospace;
+        font-size: 13px;
+        font-weight: 700;
+        word-break: break-all;
+        background: #fafafa;
+        color: var(--black);
+        text-decoration: none;
+      }
+
+      .cta {
+        background: var(--accent);
+        color: var(--black);
+        padding: 12px 14px;
+        font-size: 15px;
+        font-weight: 900;
+        text-transform: uppercase;
+        white-space: nowrap;
+        text-decoration: none;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        border-top: 2px solid var(--black);
+        border-left: 2px solid var(--black);
+        margin-bottom: 18px;
+      }
+
+      .step {
+        min-height: 94px;
+        border-right: 2px solid var(--black);
+        border-bottom: 2px solid var(--black);
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.55);
+      }
+
+      .num {
+        font-size: 28px;
+        line-height: 1;
+        font-weight: 900;
+        margin-bottom: 8px;
+      }
+
+      .step h2 {
+        margin: 0 0 5px;
+        font-size: 12px;
+        line-height: 1.1;
+        text-transform: uppercase;
+        font-weight: 900;
+      }
+
+      .step p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 10.7px;
+        line-height: 1.25;
+        font-weight: 700;
+      }
+
+      .main {
+        display: grid;
+        grid-template-columns: 1fr 0.82fr;
+        gap: 18px;
+      }
+
+      .panel {
+        border-top: 3px solid var(--black);
+        padding-top: 10px;
+      }
+
+      .panel h2 {
+        margin: 0 0 10px;
+        font-size: 23px;
+        line-height: 0.95;
+        text-transform: uppercase;
+        letter-spacing: -0.025em;
+        font-weight: 900;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      li {
+        border-top: 1px solid var(--line);
+        padding: 7px 0;
+        font-size: 12.3px;
+        line-height: 1.25;
+        font-weight: 700;
+      }
+
+      li:first-child {
+        border-top: 0;
+      }
+
+      .upload {
+        background: var(--black);
+        color: var(--white);
+        padding: 14px;
+        margin-top: 13px;
+      }
+
+      .upload h3 {
+        margin: 0 0 8px;
+        font-size: 18px;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .path {
+        display: block;
+        background: var(--white);
+        color: var(--black);
+        padding: 9px;
+        margin: 8px 0;
+        font-family: "Courier New", monospace;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .upload p {
+        margin: 0;
+        color: #e8e8e8;
+        font-size: 11.5px;
+        line-height: 1.35;
+        font-weight: 700;
+      }
+
+      .script {
+        background: var(--white);
+        border: 2px solid var(--black);
+        padding: 12px;
+        margin-top: 13px;
+      }
+
+      .script code {
+        display: block;
+        font-family: "Courier New", monospace;
+        font-size: 13px;
+        line-height: 1.35;
+        font-weight: 900;
+      }
+
+      .footer {
+        position: absolute;
+        left: 16mm;
+        right: 16mm;
+        bottom: 9mm;
+        display: flex;
+        justify-content: space-between;
+        border-top: 2px solid var(--black);
+        padding-top: 7px;
+        color: var(--muted);
+        font-size: 9.5px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <div class="brand">
+          <span class="mark"></span>
+          <span>Business Insider | Gründerszene</span>
+        </div>
+        <span>Sommercamp Founder Setup</span>
+      </header>
+
+      <section class="dek">
+        <div>
+          <h1>Mika<br />starten</h1>
+          <p>
+            Mika ist dein Sommercamp-Assistent in Codex: Onboarding,
+            Current-State-Audit, Produkt-Plan, Distribution, Build-Sprints und Launch.
+          </p>
+        </div>
+        <div class="tag">Ein GitHub-Link.<br />Zwei Befehle.<br />Ein Startsatz.</div>
+      </section>
+
+      <section class="linkbox">
+        <div class="label">Mika GitHub-Link</div>
+        <div class="linkline">
+          <a class="placeholder" href="https://github.com/Leopold-26/mika-sommercamp">github.com/Leopold-26/mika-sommercamp</a>
+          <a class="cta" href="https://github.com/Leopold-26/mika-sommercamp">GitHub öffnen</a>
+        </div>
+      </section>
+
+      <section class="linkbox">
+        <div class="label">Terminal-Befehle</div>
+        <div class="linkline">
+          <span class="placeholder">codex plugin marketplace add Leopold-26/mika-sommercamp --ref main<br />codex plugin add mika-sommercamp@gruenderszene-sommercamp</span>
+        </div>
+      </section>
+
+      <section class="grid" aria-label="Setup Schritte">
+        <article class="step">
+          <div class="num">1</div>
+          <h2>GitHub öffnen</h2>
+          <p>Öffne das öffentliche Mika-Repo.</p>
+        </article>
+        <article class="step">
+          <div class="num">2</div>
+          <h2>Installieren</h2>
+          <p>Kopiere die zwei Befehle in Terminal und starte Codex neu.</p>
+        </article>
+        <article class="step">
+          <div class="num">3</div>
+          <h2>Ordner öffnen</h2>
+          <p>Wähle deinen Sommercamp-Projektordner. Leer ist okay.</p>
+        </article>
+        <article class="step">
+          <div class="num">4</div>
+          <h2>Mika starten</h2>
+          <p>Schreibe in Codex: Starte Mika.</p>
+        </article>
+        <article class="step">
+          <div class="num">5</div>
+          <h2>Unterlagen rein</h2>
+          <p>Mika prüft erst, was du schon hast.</p>
+        </article>
+      </section>
+
+      <section class="main">
+        <div>
+          <div class="panel">
+            <h2>Was Mika dann macht</h2>
+            <ul>
+              <li>legt die Sommercamp-Projektstruktur automatisch an, falls sie fehlt</li>
+              <li>liest zuerst deine vorhandenen Unterlagen, damit du nichts doppelt machst</li>
+              <li>fragt nur die Dinge ab, die wirklich fehlen oder unklar sind</li>
+              <li>erstellt Founder-Profil, Produktthese, Website-Brief, Distribution-Plan und 10-Wochen-Plan</li>
+              <li>gibt Pushback, wenn die Idee zu breit oder nicht launchbar ist</li>
+              <li>hilft danach beim Bauen von Website, Landing Page, Web-App-MVP, Testen, Launchen und Reflektieren</li>
+            </ul>
+          </div>
+
+          <div class="upload">
+            <h3>Wichtig: Aktueller Stand zuerst</h3>
+            <p>Lege vorhandene Materialien hier ab:</p>
+            <span class="path">docs/sommercamp/00_uploads/</span>
+            <p>
+              Pitch Deck, Notizen, Screenshots, Figma-Exports, Prototyp-Links,
+              Landing-Page-Texte, User Research, Marktanalyse oder bestehender Code.
+            </p>
+          </div>
+        </div>
+
+        <aside>
+          <div class="panel">
+            <h2>Der erste Prompt</h2>
+            <p style="margin: 0 0 10px; font-size: 12.5px; line-height: 1.35; font-weight: 700;">
+              Wenn Mika installiert ist und dein Projektordner offen ist, schreibe:
+            </p>
+            <div class="script">
+              <code>Starte Mika.</code>
+            </div>
+            <div class="script">
+              <code>Mika, prüfe meinen aktuellen Stand und führe mich durch das Onboarding.</code>
+            </div>
+          </div>
+
+          <div class="panel" style="margin-top: 18px;">
+            <h2>Wenn es hakt</h2>
+            <ul>
+              <li>Terminal sagt `codex` nicht gefunden? Beim Sommercamp-Team melden.</li>
+              <li>Keine Unterlagen? Kein Problem. Mika startet mit Fragen.</li>
+              <li>Zu technisch? Mika bitten: Erklär mir das einfacher.</li>
+              <li>Abgedriftet? Schreibe: Bring mich zurück auf den Plan.</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="footer">
+        <span>Gründerszene Sommercamp</span>
+        <span>Build fast. Launch early. Distribution first.</span>
+      </footer>
+    </main>
+  </body>
+</html>

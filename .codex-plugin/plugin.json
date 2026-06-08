@@ -1,0 +1,26 @@
+{
+  "name": "sommercamp-starter",
+  "version": "0.1.0",
+  "description": "Mika, the Gruenderszene Sommercamp founder assistant for Codex.",
+  "author": {
+    "name": "Gruenderszene Sommercamp"
+  },
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Mika Sommercamp",
+    "shortDescription": "Founder onboarding, product planning, distribution review, build coaching, and launch support.",
+    "longDescription": "Mika helps Sommercamp founders turn a consumer app idea into a 10-week execution plan, with mandatory onboarding, current-state audits, distribution-first pushback, Codex build guidance, launch readiness, retros, and editorial updates.",
+    "developerName": "Gruenderszene Sommercamp",
+    "category": "Productivity",
+    "capabilities": [
+      "Founder onboarding",
+      "Product strategy",
+      "Distribution planning",
+      "Build sprint coaching",
+      "Launch readiness",
+      "Editorial updates"
+    ],
+    "defaultPrompt": "Starte Mika und fuehre mich durch das Sommercamp-Onboarding."
+  }
+}

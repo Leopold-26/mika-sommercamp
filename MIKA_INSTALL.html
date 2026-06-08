@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mika installieren</title>
+    <style>
+      :root {
+        --black: #050505;
+        --paper: #f4f1ec;
+        --accent: #7a00ff;
+        --lime: #d7ff00;
+        --muted: #666;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: var(--paper);
+        color: var(--black);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      main {
+        width: min(820px, calc(100vw - 32px));
+        border-top: 6px solid var(--black);
+        padding: 32px 0;
+      }
+
+      .brand {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+        margin-bottom: 36px;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.04em;
+      }
+
+      h1 {
+        margin: 0 0 18px;
+        font-size: clamp(46px, 10vw, 88px);
+        line-height: 0.9;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+      }
+
+      p {
+        max-width: 700px;
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.38;
+        font-weight: 700;
+      }
+
+      a.button {
+        display: inline-block;
+        margin: 12px 0 24px;
+        padding: 18px 24px;
+        background: var(--lime);
+        color: var(--black);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 900;
+        border: 2px solid var(--black);
+      }
+
+      .commands {
+        border: 2px solid var(--black);
+        padding: 18px;
+        background: #fff;
+        margin: 18px 0;
+      }
+
+      code {
+        display: block;
+        overflow-wrap: anywhere;
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        font-weight: 700;
+        margin: 8px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="brand">
+        <span>Business Insider | Gründerszene</span>
+        <span>Sommercamp</span>
+      </div>
+
+      <h1>Mika<br />installieren</h1>
+      <p>
+        Öffne das GitHub-Repo und kopiere die zwei Befehle in Terminal. Danach Codex neu starten,
+        Projektordner öffnen und im Chat <strong>Starte Mika.</strong> schreiben.
+      </p>
+
+      <a class="button" href="https://github.com/Leopold-26/mika-sommercamp">GitHub-Repo öffnen</a>
+
+      <div class="commands">
+        <p style="margin-bottom: 10px;">Installationsbefehle:</p>
+        <code>codex plugin marketplace add Leopold-26/mika-sommercamp --ref main</code>
+        <code>codex plugin add mika-sommercamp@gruenderszene-sommercamp</code>
+      </div>
+
+      <p>
+        Wenn Terminal sagt <strong>codex: command not found</strong>, installiere die Codex CLI aus den
+        Codex-Einstellungen oder melde dich beim Sommercamp-Team.
+      </p>
+    </main>
+  </body>
+</html>

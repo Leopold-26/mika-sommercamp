@@ -1,0 +1,37 @@
+{
+  "name": "mika-sommercamp",
+  "version": "0.1.0+codex.20260608132018",
+  "description": "Mika, the Gr\u00fcnderszene Sommercamp founder assistant for Codex.",
+  "author": {
+    "name": "Gr\u00fcnderszene Sommercamp"
+  },
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Mika Sommercamp",
+    "shortDescription": "Founder onboarding, product planning, GStack-style reviews, build coaching, QA, and launch support.",
+    "longDescription": "Mika helps Sommercamp founders turn a consumer app idea into a 10-week execution plan, with mandatory onboarding, current-state audits, distribution-first pushback, spec building, engineering and design reviews, website and web-app MVP building, code review, browser QA, release support, retros, and editorial updates.",
+    "developerName": "Gr\u00fcnderszene Sommercamp",
+    "category": "Productivity",
+    "brandColor": "#7A00FF",
+    "composerIcon": "./assets/mika-avatar.png",
+    "logo": "./assets/mika-avatar.png",
+    "capabilities": [
+      "Founder onboarding",
+      "Project setup",
+      "Spec building",
+      "Product strategy",
+      "Distribution planning",
+      "Engineering plan review",
+      "Design review",
+      "Website and web-app MVP building",
+      "Build sprint coaching",
+      "Code review",
+      "Browser QA",
+      "Launch readiness",
+      "Ship and release support",
+      "Editorial updates"
+    ],
+    "defaultPrompt": "Starte Mika und f\u00fchre mich durch das Sommercamp-Onboarding."
+  }
+}

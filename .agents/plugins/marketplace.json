@@ -1,0 +1,20 @@
+{
+  "name": "gruenderszene-sommercamp",
+  "interface": {
+    "displayName": "Gründerszene Sommercamp"
+  },
+  "plugins": [
+    {
+      "name": "mika-sommercamp",
+      "source": {
+        "source": "local",
+        "path": "./plugins/mika-sommercamp"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
