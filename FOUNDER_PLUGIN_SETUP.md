@@ -1,55 +1,43 @@
 # Mika Setup für Founder
 
-Das ist der einfachste Weg, wenn Mika über das öffentliche GitHub-Repo installiert wird.
+Das ist die Kurzfassung. Die ausführlichere Anleitung steht in [INSTALL_FOR_FOUNDERS.md](INSTALL_FOR_FOUNDERS.md).
 
-## 1. Mika installieren
+## 1. GitHub-Link öffnen
 
-Öffne Terminal und führe diese zwei Befehle nacheinander aus:
+```text
+https://github.com/Leopold-26/mika-sommercamp
+```
+
+## 2. Terminal öffnen
+
+Die Befehle gehören in Terminal, nicht in den Codex-Chat.
 
 ```bash
 codex plugin marketplace add Leopold-26/mika-sommercamp --ref main
 codex plugin add mika-sommercamp@gruenderszene-sommercamp
 ```
 
-Starte danach Codex neu.
+Danach Codex neu starten.
 
-Wenn Terminal sagt `codex: command not found`, ist die Codex CLI noch nicht verfügbar. Öffne Codex, installiere die Command-Line-Tools/CLI aus den Codex-Einstellungen oder melde dich beim Sommercamp-Team.
+## 3. Eigenen Projektordner öffnen
 
-## 2. Projektordner öffnen
+Erstelle einen Ordner für dein Sommercamp-Projekt und öffne genau diesen Ordner in Codex. Der Ordner darf leer sein.
 
-Öffne in Codex den Ordner, in dem dein Sommercamp-Projekt liegen soll.
+## 4. Mika starten
 
-Das kann ein leerer Ordner sein.
-
-## 3. Mika starten
-
-Schreibe in Codex:
+Starte im Projektordner einen neuen Codex-Chat und schreibe:
 
 ```text
 Starte Mika.
 ```
 
-Mika legt dann automatisch die Projektstruktur an:
+Mika legt danach automatisch `docs/sommercamp/` an und führt dich durch Onboarding, aktuellen Stand, Produktthese, Distribution, 10-Wochen-Plan und den ersten Build-Sprint.
 
-```text
-docs/sommercamp/00_uploads/
-docs/sommercamp/founder-profile.md
-docs/sommercamp/product-thesis.md
-docs/sommercamp/distribution-plan.md
-docs/sommercamp/ten-week-plan.md
-```
+## 5. Unterlagen geben
 
-## 4. Bestehende Unterlagen ablegen
+Ziehe vorhandene Unterlagen direkt in den Mika-Chat oder schicke Links:
 
-Ziehe deine Unterlagen direkt in den Mika-Chat oder lege sie hier ab:
-
-```text
-docs/sommercamp/00_uploads/
-```
-
-Zum Beispiel:
-
-- Pitch Deck
+- Pitch Decks
 - Notizen
 - Screenshots
 - Figma-Exports
@@ -58,12 +46,10 @@ Zum Beispiel:
 - User Research
 - bestehender Code
 
-## 5. Mika weiterarbeiten lassen
+Mika analysiert zuerst, was schon da ist, und fragt danach nur nach fehlenden Informationen.
 
-Schreibe danach:
+## Wenn etwas nicht klappt
 
-```text
-Mika, prüfe meinen aktuellen Stand und führe mich durch das Onboarding.
-```
+Wenn Terminal sagt `codex: command not found`, installiere die Codex CLI aus den Codex-Einstellungen oder melde dich beim Sommercamp-Team.
 
-Mika liest zuerst, was schon da ist. Danach fragt Mika nur, was wirklich fehlt.
+Wenn Mika nach der Installation nicht auftaucht, starte Codex neu und öffne einen neuen Chat im Projektordner.

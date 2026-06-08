@@ -29,10 +29,10 @@ Founder dürfen diesen lokalen Link nicht bekommen.
 Founder bekommen:
 
 1. den GitHub-Link `https://github.com/Leopold-26/mika-sommercamp`,
-2. die Anleitung [INSTALL_FOR_FOUNDERS.md](INSTALL_FOR_FOUNDERS.md),
-3. optional den Founder-One-Pager als PDF.
+2. den Founder-Setup-PDF `dist/mika-founder-one-pager.pdf`,
+3. die Anleitung [INSTALL_FOR_FOUNDERS.md](INSTALL_FOR_FOUNDERS.md).
 
-Founder müssen nicht verstehen, was ein Plugin, Marketplace oder Skill ist. Sie kopieren nur zwei Befehle.
+Founder müssen nicht verstehen, was ein Plugin, Marketplace oder Skill ist. Sie öffnen den GitHub-Link, kopieren zwei Befehle in Terminal, starten Codex neu und schreiben im eigenen Projektordner `Starte Mika.`
 
 ## Founder-Installation
 

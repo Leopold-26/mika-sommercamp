@@ -11,6 +11,7 @@ from reportlab.pdfgen import canvas
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "dist" / "mika-team-explainer.pdf"
 AVATAR = ROOT / "plugins" / "mika-sommercamp" / "assets" / "mika-avatar-sticker.png"
+REPO_URL = "https://github.com/Leopold-26/mika-sommercamp"
 
 PAGE_W, PAGE_H = A4
 M = 38
@@ -208,6 +209,17 @@ def card(c: canvas.Canvas, x: float, y: float, w: float, h: float, title: str, b
     draw_wrapped(c, body, x + 16, y - 33, w - 26, "Helvetica", 6.4, 7.8, MUTED)
 
 
+def command_box(c: canvas.Canvas, x: float, y: float, w: float, h: float, lines: list[str]) -> None:
+    c.setFillColor(BLACK)
+    c.roundRect(x, y - h, w, h, 9, stroke=0, fill=1)
+    c.setFillColor(WHITE)
+    c.setFont("Courier-Bold", 8.2)
+    ty = y - 17
+    for line in lines:
+        c.drawString(x + 13, ty, line)
+        ty -= 12
+
+
 def step_card(c: canvas.Canvas, n: int, title: str, body: str, x: float, y: float, w: float, h: float) -> None:
     c.setFillColor(LIGHT)
     c.setStrokeColor(LINE)
@@ -291,11 +303,11 @@ def page_one(c: canvas.Canvas) -> None:
 
     section_title(c, "Founder-Flow", right_x, col_y, right_w)
     steps = [
-        ("GitHub öffnen", "Founder öffnet github.com/Leopold-26/mika-sommercamp."),
-        ("Installieren", "Founder kopiert die zwei Befehle aus INSTALL_FOR_FOUNDERS.md in Terminal."),
+        ("GitHub öffnen", "Founder öffnet den öffentlichen Repo-Link. Dieser Link ist teilbar."),
+        ("Installieren", "Founder kopiert zwei Terminal-Befehle aus INSTALL_FOR_FOUNDERS.md."),
+        ("Codex neu starten", "Founder startet Codex neu, damit Plugin und Skills geladen werden."),
         ("Ordner öffnen", "Founder erstellt einen Projektordner und öffnet ihn in Codex."),
         ("Starten", "Founder schreibt: Starte Mika."),
-        ("Führen lassen", "Mika fragt, plant, baut, prüft und hält den Founder auf Kurs."),
     ]
     sy = col_y - 36
     for idx, (title, body) in enumerate(steps, start=1):
@@ -394,20 +406,47 @@ def page_three(c: canvas.Canvas) -> None:
     c.setFillColor(BLACK)
     c.setFont("Helvetica-Bold", 18)
     c.drawString(M, y, "So gebt ihr Mika an Founder weiter")
+    draw_wrapped(
+        c,
+        "Wichtig: Nicht den alten lokalen codex://... Link verschicken. Nur der öffentliche GitHub-Link ist auf anderen Laptops teilbar.",
+        M,
+        y - 20,
+        PAGE_W - 2 * M,
+        "Helvetica-Bold",
+        9,
+        11,
+        MUTED,
+    )
 
     steps = [
         ("GitHub-Link schicken", "Per Mail, Slack oder Notion: github.com/Leopold-26/mika-sommercamp."),
-        ("Founder-Anleitung mitschicken", "INSTALL_FOR_FOUNDERS.md erklärt die zwei Befehle, Projektordner und ersten Prompt."),
-        ("Founder installiert Mika", "Terminal: marketplace add, plugin add, danach Codex neu starten."),
-        ("Founder startet in Codex", "Projektordner öffnen und im Projektchat Starte Mika schreiben."),
-        ("Unterlagen akzeptieren", "Founder können Materialien direkt in den Chat ziehen oder später in docs/sommercamp/00_uploads/ speichern."),
+        ("PDF mitschicken", "Founder-PDF erklärt den Ablauf ohne Codex-Fachwörter: Link öffnen, Terminal, Codex, Projektchat."),
+        ("Founder installiert Mika", "Founder kopiert zwei Terminal-Befehle, startet Codex neu und öffnet den eigenen Projektordner."),
+        ("Founder startet Mika", "Im Projektchat schreibt der Founder: Starte Mika. Mika richtet dann docs/sommercamp/ ein."),
+        ("Unterlagen einsammeln", "Founder können Materialien direkt in den Chat ziehen; Mika auditiert sie vor weiteren Fragen."),
     ]
-    sy = y - 30
+    sy = y - 56
     for idx, (title, body) in enumerate(steps, start=1):
-        step_card(c, idx, title, body, M, sy, PAGE_W - 2 * M, 48)
-        sy -= 57
+        step_card(c, idx, title, body, M, sy, PAGE_W - 2 * M, 43)
+        sy -= 50
 
-    col_top = sy - 16
+    c.setFillColor(BLACK)
+    c.setFont("Helvetica-Bold", 12)
+    c.drawString(M, sy - 8, "Installationsbefehle für Founder")
+    command_box(
+        c,
+        M,
+        sy - 20,
+        PAGE_W - 2 * M,
+        56,
+        [
+            "codex plugin marketplace add Leopold-26/mika-sommercamp --ref main",
+            "codex plugin add mika-sommercamp@gruenderszene-sommercamp",
+        ],
+    )
+    c.linkURL(REPO_URL, (M, sy - 89, PAGE_W - M, sy - 18), relative=0)
+
+    col_top = sy - 96
     left_w = 250
     right_x = M + left_w + 26
     right_w = PAGE_W - M - right_x

@@ -45,7 +45,7 @@ Mika ist bewusst nicht nur Coding-Assistent. Mika soll coachen, nachfragen, Push
 
 Für Founder soll es so einfach wie möglich sein:
 
-1. GitHub-Link separat per Mail, Slack oder Notion schicken: `https://github.com/Leopold-26/mika-sommercamp`
+1. GitHub-Link per Mail, Slack oder Notion schicken: `https://github.com/Leopold-26/mika-sommercamp`
 2. Founder-PDF oder `INSTALL_FOR_FOUNDERS.md` mitschicken.
 3. Founder kopiert die zwei Installationsbefehle in Terminal.
 4. Founder startet Codex neu, erstellt einen Projektordner, öffnet ihn in Codex und schreibt `Starte Mika.`

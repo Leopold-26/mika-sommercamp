@@ -4,7 +4,9 @@ Mika is the Gründerszene Sommercamp assistant for Codex. It helps founders onbo
 
 ## Founder Install
 
-Open Terminal and run:
+Founders should use the public GitHub route. They do not need the old local `codex://...` link.
+
+Open Terminal and run these two commands:
 
 ```bash
 codex plugin marketplace add Leopold-26/mika-sommercamp --ref main
@@ -13,7 +15,7 @@ codex plugin add mika-sommercamp@gruenderszene-sommercamp
 
 Then restart Codex.
 
-Create or open a project folder in Codex and write:
+Create or open a project folder in Codex. The folder can be empty. Start a new chat in that folder and write:
 
 ```text
 Starte Mika.
@@ -35,8 +37,8 @@ This repo is a Codex plugin marketplace. Codex reads:
 
 It also includes the ready-to-send delivery files:
 
-- `dist/mika-founder-one-pager.pdf`
-- `dist/mika-team-explainer.pdf`
+- `dist/mika-founder-one-pager.pdf` - founder-facing setup PDF
+- `dist/mika-team-explainer.pdf` - internal team explainer PDF
 - `dist/mika-sommercamp-plugin.zip`
 - `dist/mika-sommercamp-starter.zip`
 
@@ -46,12 +48,13 @@ The plugin name is `mika-sommercamp`.
 
 ## How Founders Use Mika
 
-1. Install Mika with the two Terminal commands above.
-2. Restart Codex.
-3. Create or open a project folder in Codex.
-4. Start a new chat in that folder.
-5. Write `Starte Mika.`
-6. Send existing materials in chat or place them in `docs/sommercamp/00_uploads/`.
+1. Open `https://github.com/Leopold-26/mika-sommercamp`.
+2. Copy the two install commands from [INSTALL_FOR_FOUNDERS.md](INSTALL_FOR_FOUNDERS.md) into Terminal.
+3. Restart Codex.
+4. Create or open a project folder in Codex.
+5. Start a new chat in that folder.
+6. Write `Starte Mika.`
+7. Send existing materials in chat or place them in `docs/sommercamp/00_uploads/`.
 
 Mika first inspects what already exists. Then it asks only for missing context. It should not start building until onboarding and product thesis are clear.
 

@@ -11,6 +11,7 @@ from reportlab.pdfgen import canvas
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "dist" / "mika-founder-one-pager.pdf"
 AVATAR = ROOT / "plugins" / "mika-sommercamp" / "assets" / "mika-avatar-sticker.png"
+REPO_URL = "https://github.com/Leopold-26/mika-sommercamp"
 
 PAGE_W, PAGE_H = A4
 M = 38
@@ -24,6 +25,7 @@ INK = colors.HexColor("#111111")
 MUTED = colors.HexColor("#555555")
 LINE = colors.HexColor("#E6E6E6")
 LIME = colors.HexColor("#D7FF00")
+LIGHT = colors.HexColor("#F7F7F7")
 
 
 def wrap(c: canvas.Canvas, text: str, font: str, size: float, width: float) -> list[str]:
@@ -129,6 +131,37 @@ def draw_pill(c: canvas.Canvas, text: str, x: float, y: float, w: float, h: floa
     c.drawCentredString(x + w / 2, y + h / 2 - 3, text)
 
 
+def draw_footer(c: canvas.Canvas, page_label: str) -> None:
+    c.setFillColor(PURPLE_MID)
+    c.rect(0, 0, PAGE_W, 42, stroke=0, fill=1)
+    c.setFillColor(WHITE)
+    c.setFont("Helvetica-Bold", 10)
+    c.drawString(M, 17, "Build fast. Launch early. Distribution first.")
+    c.drawRightString(PAGE_W - M, 17, page_label)
+
+
+def draw_command_box(c: canvas.Canvas, lines: list[str], x: float, y: float, w: float, h: float) -> None:
+    c.setFillColor(BLACK)
+    c.roundRect(x, y - h, w, h, 10, stroke=0, fill=1)
+    c.setFillColor(WHITE)
+    c.setFont("Courier-Bold", 8.8)
+    ty = y - 18
+    for line in lines:
+        c.drawString(x + 14, ty, line)
+        ty -= 13
+
+
+def draw_detail_step(c: canvas.Canvas, n: int, title: str, body: str, x: float, y: float, w: float) -> float:
+    c.setFillColor(LIME)
+    c.circle(x + 13, y - 12, 11, stroke=0, fill=1)
+    c.setFillColor(BLACK)
+    c.setFont("Helvetica-Bold", 10)
+    c.drawCentredString(x + 13, y - 16, str(n))
+    c.setFont("Helvetica-Bold", 11)
+    c.drawString(x + 32, y - 10, title)
+    return draw_wrapped(c, body, x + 32, y - 25, w - 32, "Helvetica", 8.7, 10.6, MUTED) - 8
+
+
 def draw_speech_bubble(
     c: canvas.Canvas,
     x: float,
@@ -223,7 +256,7 @@ def draw_bullets(c: canvas.Canvas, items: list[str], x: float, y: float, width: 
 def render() -> None:
     OUT.parent.mkdir(parents=True, exist_ok=True)
     c = canvas.Canvas(str(OUT), pagesize=A4)
-    c.setTitle("Mika Sommercamp One-Pager")
+    c.setTitle("Mika Sommercamp Founder Setup")
 
     c.setFillColor(WHITE)
     c.rect(0, 0, PAGE_W, PAGE_H, stroke=0, fill=1)
@@ -255,24 +288,25 @@ def render() -> None:
         WHITE,
     )
     c.setFillColor(LIME)
-    pill_w = 150
+    pill_w = 118
     pill_x = PAGE_W - M - pill_w
     pill_y = PAGE_H - 198
     c.roundRect(pill_x, pill_y, pill_w, 34, 17, stroke=0, fill=1)
     c.setFillColor(BLACK)
     c.setFont("Helvetica-Bold", 10.5)
-    c.drawCentredString(pill_x + pill_w / 2, pill_y + 12, "LINK KOMMT SEPARAT")
+    c.drawCentredString(pill_x + pill_w / 2, pill_y + 12, "GITHUB-LINK")
+    c.linkURL(REPO_URL, (pill_x, pill_y, pill_x + pill_w, pill_y + 34), relative=0)
 
     # Intro
     y = PAGE_H - hero_h - 26
     c.setFillColor(BLACK)
     c.setFont("Helvetica-Bold", 19)
-    c.drawString(M, y, "Du brauchst: GitHub-Link + Projektordner.")
+    c.drawString(M, y, "Du brauchst: GitHub-Link, Terminal, Codex.")
     y -= 25
     draw_wrapped(
         c,
-        "Öffne das GitHub-Repo, kopiere die zwei Installationsbefehle aus INSTALL_FOR_FOUNDERS.md, starte Codex neu "
-        "und beginne dann in deinem eigenen Projektordner.",
+        "Mika wird einmal über GitHub installiert. Danach öffnest du deinen eigenen Projektordner in Codex, "
+        "schreibst Starte Mika und lässt dich durch Onboarding, Plan, Build und Launch führen.",
         M,
         y,
         PAGE_W - 2 * M,
@@ -288,10 +322,10 @@ def render() -> None:
     step_w = (PAGE_W - 2 * M - gap) / 2
     step_h = 72
     steps = [
-        ("GitHub öffnen", "Öffne github.com/Leopold-26/mika-sommercamp."),
-        ("Mika installieren", "Kopiere die zwei Befehle aus INSTALL_FOR_FOUNDERS.md in Terminal."),
-        ("Ordner öffnen", "Erstelle oder öffne deinen Projektordner in Codex."),
-        ("Chat starten", "Schreibe im Projektchat: Starte Mika."),
+        ("GitHub öffnen", "Öffne github.com/Leopold-26/mika-sommercamp. Der Link ist öffentlich und teilbar."),
+        ("Zwei Befehle ausführen", "Kopiere die Installationsbefehle aus INSTALL_FOR_FOUNDERS.md in Terminal."),
+        ("Codex neu starten", "Danach Codex einmal schließen und wieder öffnen, damit Mika sichtbar wird."),
+        ("Projektchat starten", "Öffne deinen Projektordner in Codex und schreibe: Starte Mika."),
     ]
     for i, (title, body) in enumerate(steps, start=1):
         col = (i - 1) % 2
@@ -310,8 +344,8 @@ def render() -> None:
         c,
         [
             "Alle Mika-Skills kommen aus dem GitHub-Plugin. Du musst keine Skill-Dateien anfassen.",
-            "Mika erstellt die Projektdateien in deinem Ordner: Profil, Audit, Produktthese, Website-Brief, Distribution und 10-Wochen-Plan.",
-            "Mika bespricht den Plan mit dir, fragt nach Lücken und startet danach Sprint 1.",
+            "Mika erstellt die Projektdateien in deinem Ordner: Profil, Audit, Produktthese, Spec, Website-Brief, Distribution und 10-Wochen-Plan.",
+            "Mika fragt nach, gibt Pushback, erklärt passende Tools und baut erst, wenn Ziel, Nutzer, Scope und Risiko klar genug sind.",
         ],
         M,
         left_y,
@@ -334,9 +368,9 @@ def render() -> None:
     right_y = draw_bullets(
         c,
         [
-            "Ziehe Pitch Decks, Notizen, Screenshots, Figma-Exports oder Links direkt in den Mika-Chat.",
-            "Mika analysiert sie und schreibt eine strukturierte Zusammenfassung in den Projektordner.",
-            "Originale können später in `docs/sommercamp/00_uploads/` gespeichert werden.",
+            "Ziehe Pitch Decks, Notizen, Screenshots, Figma-Exports, Prototyp-Links oder bestehenden Code direkt in den Mika-Chat.",
+            "Mika analysiert alles zuerst und schreibt eine strukturierte Zusammenfassung in current-state-audit.md.",
+            "Wenn du Dateien dauerhaft speichern willst, lege sie später in docs/sommercamp/00_uploads/ ab.",
         ],
         right_x,
         right_y,
@@ -350,7 +384,7 @@ def render() -> None:
     c.drawString(right_x + 14, right_y - 34, "Danach führt Mika:")
     draw_wrapped(
         c,
-        "Plan prüfen, Lücken klären, Sprint 1 starten, dann Woche für Woche weiter.",
+        "Onboarding abschließen, 10-Wochen-Plan bauen, Lücken abfragen, Sprint 1 starten, dann Woche für Woche weiter.",
         right_x + 14,
         right_y - 52,
         right_w - 28,
@@ -360,13 +394,124 @@ def render() -> None:
         WHITE,
     )
 
-    # Bottom strip
-    c.setFillColor(PURPLE_MID)
-    c.rect(0, 0, PAGE_W, 42, stroke=0, fill=1)
+    draw_footer(c, "GRÜNDERSZENE SOMMERCAMP · 1")
+
+    c.showPage()
     c.setFillColor(WHITE)
-    c.setFont("Helvetica-Bold", 10)
-    c.drawString(M, 17, "Build fast. Launch early. Distribution first.")
-    c.drawRightString(PAGE_W - M, 17, "GRÜNDERSZENE SOMMERCAMP")
+    c.rect(0, 0, PAGE_W, PAGE_H, stroke=0, fill=1)
+
+    draw_gradient(c, 0, PAGE_H - 92, PAGE_W, 92)
+    draw_logo_text(c, "GRÜNDERSZENE", M, PAGE_H - 44, 22)
+    c.setFillColor(WHITE)
+    c.setFont("Helvetica-Bold", 21)
+    c.drawRightString(PAGE_W - M, PAGE_H - 48, "SETUP")
+
+    y = PAGE_H - 124
+    c.setFillColor(BLACK)
+    c.setFont("Helvetica-Bold", 20)
+    c.drawString(M, y, "Ganz konkret: so startest du Mika")
+    y -= 23
+    y = draw_wrapped(
+        c,
+        "Bitte die Befehle in Terminal kopieren, nicht in den Codex-Chat. Danach arbeitest du wieder nur in Codex.",
+        M,
+        y,
+        PAGE_W - 2 * M,
+        "Helvetica-Bold",
+        10,
+        12.4,
+        MUTED,
+    )
+
+    full_w = PAGE_W - 2 * M
+    col_y = y - 22
+
+    c.setFillColor(LIGHT)
+    c.setStrokeColor(LINE)
+    c.setLineWidth(1)
+    c.roundRect(M, col_y - 86, full_w, 86, 10, stroke=1, fill=1)
+    c.setFillColor(BLACK)
+    c.setFont("Helvetica-Bold", 13)
+    c.drawString(M + 16, col_y - 23, "1. GitHub-Link öffnen")
+    c.setFont("Helvetica-Bold", 9.5)
+    c.setFillColor(PURPLE)
+    c.drawString(M + 16, col_y - 44, "github.com/Leopold-26/mika-sommercamp")
+    c.linkURL(REPO_URL, (M + 16, col_y - 50, M + full_w - 16, col_y - 34), relative=0)
+    draw_wrapped(
+        c,
+        "Im Repo findest du die Founder-Anleitung INSTALL_FOR_FOUNDERS.md. Du musst nichts herunterladen, um Mika als Plugin zu installieren.",
+        M + 16,
+        col_y - 65,
+        full_w - 32,
+        "Helvetica",
+        8.5,
+        10.2,
+        MUTED,
+    )
+
+    c.setFillColor(BLACK)
+    c.setFont("Helvetica-Bold", 13)
+    c.drawString(M, col_y - 112, "2. Terminal öffnen und diese zwei Befehle nacheinander ausführen")
+    draw_command_box(
+        c,
+        [
+            "codex plugin marketplace add Leopold-26/mika-sommercamp --ref main",
+            "codex plugin add mika-sommercamp@gruenderszene-sommercamp",
+        ],
+        M,
+        col_y - 128,
+        full_w,
+        50,
+    )
+    draw_wrapped(
+        c,
+        "Danach Codex einmal neu starten. Das ist wichtig, damit das Plugin und alle Mika-Skills geladen werden.",
+        M,
+        col_y - 190,
+        full_w,
+        "Helvetica-Bold",
+        8.7,
+        10.5,
+        MUTED,
+    )
+
+    y2 = col_y - 225
+    y2 = draw_detail_step(c, 3, "Projektordner erstellen", "Erstelle einen neuen Ordner für dein Sommercamp-Projekt. Der Ordner darf komplett leer sein.", M, y2, PAGE_W - 2 * M)
+    y2 = draw_detail_step(c, 4, "Ordner in Codex öffnen", "Öffne genau diesen Ordner in Codex und starte dort einen neuen Chat. So kann Mika Dateien in den richtigen Projektordner schreiben.", M, y2, PAGE_W - 2 * M)
+    y2 = draw_detail_step(c, 5, "Ersten Prompt senden", "Schreibe im Projektchat nur: Starte Mika. Danach richtet Mika docs/sommercamp/ ein und beginnt mit dem Onboarding.", M, y2, PAGE_W - 2 * M)
+    y2 = draw_detail_step(c, 6, "Unterlagen geben", "Ziehe vorhandene Materialien in den Chat oder schicke Links. Mika prüft sie zuerst, damit du nichts doppelt erklären musst.", M, y2, PAGE_W - 2 * M)
+
+    section_y = y2 - 12
+    draw_section_title(c, "Wenn etwas nicht klappt", M, section_y, 238)
+    draw_bullets(
+        c,
+        [
+            "Terminal sagt codex: command not found: Codex CLI in den Codex-Einstellungen installieren oder beim Team melden.",
+            "Mika ist nach dem Install nicht sichtbar: Codex neu starten und einen neuen Chat im Projektordner öffnen.",
+        ],
+        M,
+        section_y - 42,
+        PAGE_W - 2 * M,
+    )
+
+    c.setFillColor(BLACK)
+    c.rect(M, 76, PAGE_W - 2 * M, 82, stroke=0, fill=1)
+    c.setFillColor(WHITE)
+    c.setFont("Helvetica-Bold", 14)
+    c.drawString(M + 16, 133, "Was Mika danach macht")
+    draw_wrapped(
+        c,
+        "Mika erstellt die Projektdateien, auditiert deinen aktuellen Stand, stellt Onboarding-Fragen, baut einen 10-Wochen-Plan mit Launch in Woche 4 und fragt dich nach Lücken. Danach führt Mika dich Schritt für Schritt durch Sprint 1, Website/App-MVP, QA, Launch und Retros.",
+        M + 16,
+        114,
+        PAGE_W - 2 * M - 32,
+        "Helvetica-Bold",
+        8.6,
+        10.4,
+        WHITE,
+    )
+
+    draw_footer(c, "GRÜNDERSZENE SOMMERCAMP · 2")
 
     c.save()
     print(OUT)

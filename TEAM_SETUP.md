@@ -32,11 +32,17 @@ This is the main route because it does not depend on local Mac paths or workspac
 Send:
 
 1. GitHub repo link: `https://github.com/Leopold-26/mika-sommercamp`
-2. Founder instructions: [INSTALL_FOR_FOUNDERS.md](INSTALL_FOR_FOUNDERS.md)
-3. Optional one-pager PDF: `dist/mika-founder-one-pager.pdf`
-4. Optional team PDF: `dist/mika-team-explainer.pdf`
+2. Founder setup PDF: `dist/mika-founder-one-pager.pdf`
+3. Founder instructions: [INSTALL_FOR_FOUNDERS.md](INSTALL_FOR_FOUNDERS.md)
+4. Optional internal team PDF: `dist/mika-team-explainer.pdf`
 
 Do not send local `codex://...marketplacePath=/Users/...` links. They only work on the creator's laptop.
+
+Founder message should be simple:
+
+```text
+Open this GitHub link, follow the Mika setup PDF, then open your own project folder in Codex and write: Starte Mika.
+```
 
 ## Repository Layout
 
