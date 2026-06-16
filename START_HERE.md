@@ -1,102 +1,74 @@
-# Start Here: Mika einrichten
+# Start Here: Mika in Codex starten
 
-Diese Anleitung ist für Founder geschrieben, die nicht technisch sein müssen.
+Diese Anleitung ist für Founder. Du brauchst nur Codex und diesen Ordner.
 
-## 1. Mika installieren
+## 1. Ordner herunterladen
 
-Öffne Terminal und führe diese zwei Befehle aus:
+Wenn du auf GitHub bist:
 
-```bash
-codex plugin marketplace add Leopold-26/mika-sommercamp --ref main
-codex plugin add mika-sommercamp@gruenderszene-sommercamp
-```
+1. Klicke auf den grünen Button **Code**.
+2. Klicke auf **Download ZIP**.
+3. Entpacke die ZIP-Datei.
 
-Starte danach Codex neu.
+Danach hast du einen Ordner auf deinem Laptop.
 
-Wenn Terminal sagt `codex: command not found`, ist die Codex CLI noch nicht verfügbar. Öffne Codex, installiere die Command-Line-Tools/CLI aus den Codex-Einstellungen oder melde dich beim Sommercamp-Team.
+## 2. Ordner in Codex öffnen
 
-## 2. Projektordner erstellen
+Öffne genau diesen entpackten Ordner in Codex.
 
-Erstelle auf deinem Laptop einen neuen Ordner für dein Sommercamp-Projekt und öffne ihn in Codex.
-
-Der Ordner darf leer sein.
+Wichtig: Nicht nur einzelne Dateien öffnen. Öffne den ganzen Ordner.
 
 ## 3. Mika starten
 
-Öffne in Codex einen neuen Chat in diesem Ordner und schreibe:
+Starte in Codex einen neuen Chat in diesem Ordner und schreibe:
 
 ```text
 Starte Mika.
 ```
 
-Mika legt dann automatisch die Projektstruktur an.
+Mika erkennt dann die Sommercamp-Anweisungen und Skills aus diesem Ordner.
 
-## 4. Bestehende Unterlagen sammeln
+## 4. Unterlagen geben
 
-Ziehe vorhandene Unterlagen direkt in den Mika-Chat oder lege sie später hier ab:
+Wenn du schon Materialien hast, ziehe sie direkt in den Mika-Chat oder schicke Links:
 
-```text
-docs/sommercamp/00_uploads/
-```
-
-Das können sein:
-
-- Pitch Decks
+- Pitch Deck
 - Notizen
 - Screenshots
-- Produktideen
-- Landing-Page-Texte
-- Figma- oder Design-Exports
+- Figma-Export
+- Prototyp-Link
+- Landing-Page-Text
 - User Research
-- Links zu Prototypen
 - bestehender Code
-- Markt- oder Wettbewerbsrecherche
 
-Wichtig: Du musst nichts schön formatieren. Mika soll zuerst lesen, was da ist.
+Du musst nichts perfekt sortieren. Mika prüft zuerst, was schon da ist, und fragt danach nur nach dem, was fehlt.
 
-## 5. Was danach passiert
+## 5. Was Mika danach macht
 
-Mika führt dich durch ein Onboarding. Danach erstellt Mika:
+Mika führt dich durch:
 
-- dein Founder-Profil,
-- deine Produktthese,
-- deinen aktuellen Stand,
-- deine größten Risiken,
-- deinen Distribution-Plan,
-- deine Spezifikation für konkrete Features,
-- deinen Engineering-Plan, wenn Technik, Daten, AI, Auth oder Integrationen relevant sind,
-- deinen Design-Review, wenn UI oder Website wichtig sind,
-- deinen Website-Brief, falls eine Website, Landing Page oder Web-App gebaut werden soll,
-- deinen 10-Wochen-Plan,
-- Code-Review, Browser-QA und Release-Check vor Launch,
-- deinen ersten konkreten Sprint.
+1. aktuellen Stand prüfen
+2. Onboarding
+3. Produktthese
+4. Distribution und erste Nutzer
+5. 10-Wochen-Plan
+6. Plan-Lücken besprechen
+7. Sprint 1
+8. Website, Landing Page oder App-MVP
+9. QA, Launch und Retros
 
-Danach fragt Mika dich:
+Mika soll nicht nur zuhören. Mika soll dich führen, nachfragen, Pushback geben und dich auf Launch und Distribution fokussieren.
 
-```text
-Was siehst du in diesem Plan anders, was fehlt, und was hast du davon schon erledigt?
-```
+## Wenn du nicht weiterkommst
 
-Erst wenn der Plan klar ist, hilft Mika beim Bauen.
-
-## 6. Wenn du nicht weiterkommst
-
-Schreibe eine dieser Nachrichten:
+Schreibe einfach:
 
 ```text
 Mika, ich weiß gerade nicht, was der nächste Schritt ist.
 ```
 
-```text
-Mika, ich glaube ich drifte gerade ab. Bring mich zurück auf den Plan.
-```
+Oder:
 
 ```text
-Mika, erklär mir diese technische Entscheidung einfacher.
+Mika, prüfe bitte, ob ich gerade zu viel baue.
 ```
-
-```text
-Mika, prüfe bitte, ob ich zu viel baue.
-```
-
-Mika soll nicht nur zuhören, sondern dich aktiv führen.

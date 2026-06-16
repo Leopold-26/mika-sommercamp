@@ -1,106 +1,94 @@
 # Mika Sommercamp
 
-Mika is the Gründerszene Sommercamp assistant for Codex. It helps founders onboard, audit existing work, sharpen the product idea, plan the 10 weeks, turn vague requests into specs, run GStack-style design/engineering/code reviews, build websites and web-app MVPs with Codex, QA in the browser, prepare launch, and turn progress into editorial updates.
+Mika ist der Codex-Assistent für das Gründerszene Sommercamp. Mika hilft Foundern beim Onboarding, prüft vorhandene Unterlagen, stellt Rückfragen, gibt Pushback, baut einen 10-Wochen-Plan und begleitet Website, App-MVP, QA, Launch und Retros.
 
-## Founder Install
+## Einfachster Start
 
-Founders should use the public GitHub route. They do not need the old local `codex://...` link.
+Du musst kein Plugin installieren und keine Terminal-Befehle ausführen.
 
-Open Terminal and run these two commands:
+1. Klicke oben rechts auf GitHub auf den grünen Button **Code**.
+2. Klicke auf **Download ZIP**.
+3. Entpacke die ZIP-Datei auf deinem Laptop.
+4. Öffne den entpackten Ordner in Codex.
+5. Starte in diesem Ordner einen neuen Chat.
+6. Schreibe:
+
+```text
+Starte Mika.
+```
+
+Fertig. Mika liest dann die Projektanweisungen und Skills aus diesem Ordner.
+
+## Warum das funktioniert
+
+Der Ordner enthält alles, was Codex braucht:
+
+- `AGENTS.md` mit Mikas Grundverhalten
+- `.agents/skills/` mit den Mika-Skills
+- `docs/sommercamp/` für Founder-Profil, Audit, Produktthese, Distribution und 10-Wochen-Plan
+- `START_HERE.md` als einfache Anleitung
+
+Codex erkennt Skills aus `.agents/skills`, wenn du genau diesen Ordner in Codex öffnest.
+
+## Was du danach machst
+
+Wenn Mika gestartet ist, gib ihr vorhandene Unterlagen direkt im Chat:
+
+- Pitch Decks
+- Notizen
+- Screenshots
+- Figma-Exports
+- Prototyp-Links
+- Landing-Page-Texte
+- User Research
+- bestehender Code
+
+Mika prüft zuerst, was schon da ist. Danach fragt Mika nur nach dem, was wirklich fehlt.
+
+## Was Mika dann macht
+
+Mika führt dich durch diese Reihenfolge:
+
+1. aktuellen Stand prüfen
+2. Founder-Onboarding durchführen
+3. Produktthese und Zielnutzer schärfen
+4. Distribution und erste 100 Nutzer prüfen
+5. 10-Wochen-Plan mit Launch in Woche 4 erstellen
+6. Lücken mit dir besprechen
+7. Sprint 1 starten
+8. Website, Landing Page oder App-MVP bauen, wenn der Plan klar genug ist
+9. QA, Launch, Retros und Updates begleiten
+
+Mika soll nicht blind bauen. Wenn etwas unklar ist, fragt Mika nach und erklärt dir, welches Tool oder welcher Skill gerade hilft.
+
+## Für bestehende Projekte
+
+Wenn du schon einen eigenen App-Ordner hast, nimm trotzdem zuerst den einfachen Weg:
+
+1. Lade diesen Mika-Ordner herunter.
+2. Öffne ihn in Codex.
+3. Starte Mika.
+4. Ziehe deine vorhandenen Unterlagen, Links oder Dateien in den Mika-Chat.
+
+Mika kann dir danach helfen, bestehende Dateien zu prüfen oder den nächsten Build-Schritt sauber zu planen.
+
+## Advanced: Plugin installieren
+
+Nur wenn du Mika als wiederverwendbares Codex-Plugin installieren willst, nutze diesen Weg:
 
 ```bash
 codex plugin marketplace add Leopold-26/mika-sommercamp --ref main
 codex plugin add mika-sommercamp@gruenderszene-sommercamp
 ```
 
-Then restart Codex.
+Danach Codex neu starten, einen Projektordner öffnen und `Starte Mika.` schreiben.
 
-Create or open a project folder in Codex. The folder can be empty. Start a new chat in that folder and write:
+Dieser Plugin-Weg ist optional. Für Founder ist **Download ZIP** der empfohlene Weg.
 
-```text
-Starte Mika.
-```
+## Team-Unterlagen
 
-Mika will create the Sommercamp workspace files if they are missing.
-
-Full founder instructions: [INSTALL_FOR_FOUNDERS.md](INSTALL_FOR_FOUNDERS.md)
-
-## What This Repo Contains
-
-This repo is a Codex plugin marketplace. Codex reads:
-
-- `.agents/plugins/marketplace.json`
-- `plugins/mika-sommercamp/.codex-plugin/plugin.json`
-- `plugins/mika-sommercamp/skills/`
-- `plugins/mika-sommercamp/references/`
-- `plugins/mika-sommercamp/templates/project/`
-
-It also includes the ready-to-send delivery files:
-
-- `dist/mika-founder-one-pager.pdf` - founder-facing setup PDF
-- `dist/mika-team-explainer.pdf` - internal team explainer PDF
-- `dist/mika-sommercamp-plugin.zip`
-- `dist/mika-sommercamp-starter.zip`
-
-The marketplace name is `gruenderszene-sommercamp`.
-
-The plugin name is `mika-sommercamp`.
-
-## How Founders Use Mika
-
-1. Open `https://github.com/Leopold-26/mika-sommercamp`.
-2. Copy the two install commands from [INSTALL_FOR_FOUNDERS.md](INSTALL_FOR_FOUNDERS.md) into Terminal.
-3. Restart Codex.
-4. Create or open a project folder in Codex.
-5. Start a new chat in that folder.
-6. Write `Starte Mika.`
-7. Send existing materials in chat or place them in `docs/sommercamp/00_uploads/`.
-
-Mika first inspects what already exists. Then it asks only for missing context. It should not start building until onboarding and product thesis are clear.
-
-## What Mika Creates
-
-Mika maintains these working documents in the founder's project folder:
-
-- `docs/sommercamp/founder-profile.md`
-- `docs/sommercamp/current-state-audit.md`
-- `docs/sommercamp/product-thesis.md`
-- `docs/sommercamp/distribution-plan.md`
-- `docs/sommercamp/spec.md`
-- `docs/sommercamp/engineering-plan.md`
-- `docs/sommercamp/design-review.md`
-- `docs/sommercamp/website-brief.md`
-- `docs/sommercamp/code-review.md`
-- `docs/sommercamp/qa-report.md`
-- `docs/sommercamp/launch-readiness.md`
-- `docs/sommercamp/release-log.md`
-- `docs/sommercamp/ten-week-plan.md`
-- `docs/sommercamp/risks.md`
-- `docs/sommercamp/weekly-retros.md`
-- `docs/sommercamp/editorial-log.md`
-
-## Founder Promise
-
-Mika is not only a coding assistant. Mika should:
-
-- ask good questions,
-- prevent duplicate work,
-- push back when the plan is weak,
-- explain technical choices simply,
-- keep the founder focused on launch and distribution,
-- explain which tool in Mika's arsenal fits the current phase,
-- ask until the work is roughly 95% understood before building,
-- ask concrete product and design questions before building websites,
-- review code, test in browser, and prepare release only when the context is clear,
-- help build the app when the plan is clear.
-
-## Updating Mika
-
-After pushing plugin changes to `main`, founders can update with:
-
-```bash
-codex plugin marketplace upgrade gruenderszene-sommercamp
-codex plugin add mika-sommercamp@gruenderszene-sommercamp
-```
-
-They should restart Codex and start a new chat after updating.
+- [START_HERE.md](START_HERE.md) - einfache Founder-Anleitung
+- [FOUNDER_PLUGIN_SETUP.md](FOUNDER_PLUGIN_SETUP.md) - Setup-Kurzfassung
+- [TEAM_SETUP.md](TEAM_SETUP.md) - interne Team-Auslieferung
+- `dist/mika-sommercamp-starter.zip` - fertiges Starter-Paket
+- `dist/mika-sommercamp-plugin.zip` - Plugin-Paket für Advanced Setup

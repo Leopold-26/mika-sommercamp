@@ -9,17 +9,17 @@ Mika ist bewusst nicht nur Coding-Assistent. Mika soll coachen, nachfragen, Push
 ## Founder-Flow
 
 1. Founder öffnet das öffentliche GitHub-Repo.
-2. Founder führt die zwei Codex-Installationsbefehle aus.
-3. Founder erstellt oder öffnet einen Projektordner in Codex.
-4. Founder schreibt `Starte Mika.`
-5. Mika erstellt fehlende Sommercamp-Dateien im Ordner.
-6. Mika prüft vorhandene Unterlagen, Links, Screenshots, Figma-Exports oder Code.
-7. Mika führt das Onboarding durch und fragt nur nach fehlendem Kontext.
-8. Mika erstellt Produktthese, Distribution-Plan, Risiken, Spec, Engineering-Plan, Design-Review, Website-Brief und 10-Wochen-Plan.
-9. Mika bespricht den Plan, fragt nach Lücken und startet dann Sprint 1.
-10. Mika führt Woche für Woche durch Build, Distribution, Launch-Checks und Retros.
+2. Founder klickt auf **Code** und **Download ZIP**.
+3. Founder entpackt die ZIP-Datei.
+4. Founder öffnet den entpackten Ordner in Codex.
+5. Founder schreibt `Starte Mika.`
+6. Mika nutzt die repo-lokalen Anweisungen und Skills aus `.agents/skills`.
+7. Mika prüft vorhandene Unterlagen, Links, Screenshots, Figma-Exports oder Code.
+8. Mika führt das Onboarding durch und fragt nur nach fehlendem Kontext.
+9. Mika erstellt Produktthese, Distribution-Plan, Risiken, Spec, Engineering-Plan, Design-Review, Website-Brief und 10-Wochen-Plan.
+10. Mika bespricht den Plan, fragt nach Lücken und startet dann Sprint 1.
 
-## Skills
+## Skills im Mika-Ordner
 
 - `mika-start`: Startet oder resumed Mika und routet in den passenden nächsten Skill.
 - `mika-project-setup`: Erstellt AGENTS.md, Starter-Dateien und `docs/sommercamp/*`, wenn der Projektordner leer ist.
@@ -47,11 +47,11 @@ Für Founder soll es so einfach wie möglich sein:
 
 1. GitHub-Link per Mail, Slack oder Notion schicken: `https://github.com/Leopold-26/mika-sommercamp`
 2. Founder-PDF oder `INSTALL_FOR_FOUNDERS.md` mitschicken.
-3. Founder kopiert die zwei Installationsbefehle in Terminal.
-4. Founder startet Codex neu, erstellt einen Projektordner, öffnet ihn in Codex und schreibt `Starte Mika.`
-5. Vorhandene Unterlagen können direkt in den Chat gezogen oder später in `docs/sommercamp/00_uploads/` gespeichert werden.
+3. Founder lädt das Repo als ZIP herunter und entpackt es.
+4. Founder öffnet den entpackten Ordner in Codex und schreibt `Starte Mika.`
+5. Vorhandene Unterlagen können direkt in den Chat gezogen werden.
 
-Bereits installierte Founder führen `codex plugin marketplace upgrade gruenderszene-sommercamp` aus und starten danach einen neuen Codex-Chat, damit neue Skills und das neue Icon geladen werden.
+Der Plugin-Weg bleibt nur für technische Nutzer oder Team-Mitglieder relevant.
 
 ## Team-Hinweise
 

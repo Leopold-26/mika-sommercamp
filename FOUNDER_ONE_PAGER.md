@@ -6,64 +6,41 @@ Mika ist dein Sommercamp-Assistent in Codex. Mika hilft dir beim Onboarding, pr�
 
 ## 1. GitHub-Link öffnen
 
-Du bekommst vom Sommercamp-Team diesen Repo-Link:
-
 ```text
 https://github.com/Leopold-26/mika-sommercamp
 ```
 
-Du musst das Repo nicht forken, um Mika zu installieren.
+## 2. ZIP herunterladen
 
-## 2. Mika installieren
+Auf GitHub:
 
-Öffne Terminal und kopiere diese zwei Befehle nacheinander hinein:
+1. Klicke auf **Code**.
+2. Klicke auf **Download ZIP**.
+3. Entpacke die ZIP-Datei.
 
-```bash
-codex plugin marketplace add Leopold-26/mika-sommercamp --ref main
-codex plugin add mika-sommercamp@gruenderszene-sommercamp
-```
+Du musst kein Plugin installieren und keine Terminal-Befehle ausführen.
 
-Starte danach Codex neu.
+## 3. Ordner in Codex öffnen
 
-Wenn Terminal sagt `codex: command not found`, ist die Codex CLI noch nicht verfügbar. Öffne Codex, installiere die Command-Line-Tools/CLI aus den Codex-Einstellungen oder melde dich beim Sommercamp-Team.
+Öffne den entpackten Mika-Ordner in Codex.
 
-## 3. Projektordner erstellen
-
-Erstelle auf deinem Computer einen neuen Ordner für dein Sommercamp-Projekt.
-
-```text
-mein-sommercamp-projekt
-```
-
-Öffne diesen Ordner in Codex. Er darf leer sein.
-
-Wichtig: Starte Mika in genau diesem Ordner. Mika legt dort alle Projektdateien an.
+Wichtig: Öffne den ganzen Ordner, nicht nur einzelne Dateien.
 
 ## 4. Mika starten
 
-Starte in Codex einen Chat in diesem Projektordner und schreibe:
+Starte in Codex einen neuen Chat in diesem Ordner und schreibe:
 
 ```text
 Starte Mika.
 ```
 
-Mika legt dann automatisch die Sommercamp-Projektdateien an.
-
-Du musst keine Skill-Dateien kopieren oder einrichten. Die Mika-Skills kommen aus dem Plugin. Dein Projektordner speichert nur deinen aktuellen Stand, Unterlagen, Audits, Pläne und Logs.
+Mika erkennt dann die Sommercamp-Anweisungen und Skills aus dem Ordner.
 
 ## 5. Vorhandene Unterlagen geben
 
-Du musst nichts sortieren.
+Ziehe vorhandene Unterlagen direkt in den Mika-Chat oder kopiere Links/Notizen hinein.
 
-Am einfachsten: Ziehe deine vorhandenen Unterlagen direkt in den Mika-Chat oder kopiere Links/Notizen hinein.
-
-Wenn du Dateien lieber im Ordner ablegen willst, nutzt Mika diesen Ordner:
-
-```text
-docs/sommercamp/00_uploads/
-```
-
-Lege dort alles ab, was du schon hast:
+Das können sein:
 
 - Pitch Deck
 - Notizen
@@ -75,15 +52,9 @@ Lege dort alles ab, was du schon hast:
 - bestehender Code
 - Markt- oder Wettbewerbsrecherche
 
-Mika prüft zuerst deinen aktuellen Stand, schreibt eine strukturierte Zusammenfassung in den Projektordner und fragt danach nur, was wirklich fehlt.
+Mika prüft zuerst deinen aktuellen Stand, schreibt eine strukturierte Zusammenfassung und fragt danach nur, was wirklich fehlt.
 
-## 6. Onboarding starten
-
-Schreibe danach:
-
-```text
-Mika, prüfe meinen aktuellen Stand und führe mich durch das Onboarding.
-```
+## 6. Was danach passiert
 
 Mika wird dann:
 
@@ -100,12 +71,12 @@ Mika wird dann:
 11. deine Lücken und Änderungen einarbeiten,
 12. danach Sprint 1 starten und dich Schritt für Schritt weiterführen.
 
-## Wenn die Installation nicht funktioniert
+## Wenn etwas nicht funktioniert
 
 Melde dich beim Sommercamp-Team und schreibe:
 
 ```text
-Die Mika-Installation über GitHub funktioniert bei mir nicht.
+Ich habe den Mika-Ordner heruntergeladen, aber Codex startet Mika nicht.
 ```
 
-Dann bekommst du Hilfe beim Codex-CLI-Setup oder eine ZIP-Datei als Fallback.
+Dann kann das Team prüfen, ob du wirklich den ganzen entpackten Ordner in Codex geöffnet hast.

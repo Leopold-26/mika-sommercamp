@@ -1,16 +1,37 @@
-# Mika Plugin Sharing
+# Mika Sharing
 
 Diese Datei ist für das Gründerszene/Sommercamp-Team.
 
 ## Entscheidung
 
-Mika wird als öffentliches GitHub-Marketplace-Repo verteilt.
+Mika wird öffentlich über GitHub verteilt. Der Hauptweg ist nicht mehr Plugin-Installation, sondern Download ZIP.
 
 ```text
 https://github.com/Leopold-26/mika-sommercamp
 ```
 
-Das ist der richtige Weg, wenn eine Person den Link an eine andere Person weitergeben können soll.
+## Founder-Flow
+
+Founder sollen diese Schritte befolgen:
+
+1. GitHub-Link öffnen.
+2. Auf **Code** klicken.
+3. Auf **Download ZIP** klicken.
+4. ZIP entpacken.
+5. Entpackten Ordner in Codex öffnen.
+6. Im neuen Chat schreiben: `Starte Mika.`
+7. Vorhandene Unterlagen in den Chat ziehen oder Links schicken.
+
+## Warum das einfacher ist
+
+Der entpackte Ordner enthält bereits:
+
+- `AGENTS.md`
+- `.agents/skills/`
+- `docs/sommercamp/`
+- `START_HERE.md`
+
+Codex kann diese repo-lokalen Skills direkt nutzen, wenn der Ordner geöffnet wird.
 
 ## Warum nicht der alte Link?
 
@@ -29,50 +50,19 @@ Founder dürfen diesen lokalen Link nicht bekommen.
 Founder bekommen:
 
 1. den GitHub-Link `https://github.com/Leopold-26/mika-sommercamp`,
-2. den Founder-Setup-PDF `dist/mika-founder-one-pager.pdf`,
-3. die Anleitung [INSTALL_FOR_FOUNDERS.md](INSTALL_FOR_FOUNDERS.md).
+2. die kurze Download-ZIP-Anleitung aus [INSTALL_FOR_FOUNDERS.md](INSTALL_FOR_FOUNDERS.md).
 
-Founder müssen nicht verstehen, was ein Plugin, Marketplace oder Skill ist. Sie öffnen den GitHub-Link, kopieren zwei Befehle in Terminal, starten Codex neu und schreiben im eigenen Projektordner `Starte Mika.`
+Founder müssen nicht verstehen, was ein Plugin, Marketplace oder Skill ist.
 
-## Founder-Installation
+## Optionaler Plugin-Weg
+
+Der Plugin-Weg bleibt für technische Nutzer möglich:
 
 ```bash
 codex plugin marketplace add Leopold-26/mika-sommercamp --ref main
 codex plugin add mika-sommercamp@gruenderszene-sommercamp
 ```
 
-Danach:
+Danach Codex neu starten.
 
-1. Codex neu starten.
-2. Projektordner öffnen.
-3. Neuen Chat starten.
-4. `Starte Mika.` schreiben.
-
-## Weitergeben
-
-Weil das Repo öffentlich ist, kann jede Person denselben GitHub-Link weitergeben.
-
-Kein Workspace-Share-Button ist nötig.
-
-## Updates
-
-Wenn das Team Mika aktualisiert:
-
-1. Änderungen committen und auf `main` pushen.
-2. Foundern diese Befehle schicken:
-
-   ```bash
-   codex plugin marketplace upgrade gruenderszene-sommercamp
-   codex plugin add mika-sommercamp@gruenderszene-sommercamp
-   ```
-
-3. Founder starten Codex neu und öffnen einen neuen Chat.
-
-## Fallback
-
-Falls die Codex CLI bei einem Founder nicht verfügbar ist:
-
-1. Founder öffnet Codex und installiert die CLI/Command-Line-Tools aus den Einstellungen.
-2. Wenn das nicht klappt, Founder lädt das GitHub-Repo als ZIP herunter.
-3. Founder öffnet den entpackten Ordner in Codex.
-4. Founder schreibt `Starte Mika.`
+Für Founder ist das nicht der empfohlene Weg.

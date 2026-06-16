@@ -2,14 +2,12 @@
 
 ## Ziel
 
-Founder sollen Mika mit möglichst wenig Setup nutzen können, und der Link soll weiterleitbar sein.
-
-Der alte lokale `codex://...marketplacePath=/Users/...` Link ist dafür falsch, weil er nur auf dem Ersteller-Laptop funktioniert.
+Founder sollen Mika ohne Terminal, ohne Plugin-Verständnis und ohne lokale `codex://`-Links starten können.
 
 ## Hauptweg
 
 ```text
-GitHub-Link öffnen -> zwei Codex-Befehle ausführen -> Codex neu starten -> Projektordner öffnen -> Starte Mika
+GitHub-Link öffnen -> Code -> Download ZIP -> entpacken -> Ordner in Codex öffnen -> Starte Mika
 ```
 
 GitHub-Link:
@@ -18,54 +16,48 @@ GitHub-Link:
 https://github.com/Leopold-26/mika-sommercamp
 ```
 
-Founder-Befehle:
+## Warum dieser Weg
+
+Der heruntergeladene Ordner enthält bereits alles, was Codex braucht:
+
+- `AGENTS.md`
+- `.agents/skills/`
+- `docs/sommercamp/`
+- `START_HERE.md`
+
+Codex erkennt repo-lokale Skills aus `.agents/skills`, wenn der Founder den ganzen Ordner in Codex öffnet. Deshalb muss der Founder Mika nicht als Plugin installieren.
+
+## Founder-Kurzversion
+
+```text
+1. Öffne https://github.com/Leopold-26/mika-sommercamp
+2. Klicke auf Code.
+3. Klicke auf Download ZIP.
+4. Entpacke die ZIP.
+5. Öffne den entpackten Ordner in Codex.
+6. Schreibe: Starte Mika.
+7. Ziehe vorhandene Unterlagen in den Mika-Chat.
+```
+
+## Advanced-Weg
+
+Das Plugin bleibt im Repo, aber es ist nicht der Hauptweg für Founder.
+
+Plugin-Befehle nur für technische Nutzer:
 
 ```bash
 codex plugin marketplace add Leopold-26/mika-sommercamp --ref main
 codex plugin add mika-sommercamp@gruenderszene-sommercamp
 ```
 
-## Warum GitHub
+Danach Codex neu starten.
 
-Ein öffentliches GitHub-Repo kann jede Person weitergeben. Es hängt nicht an deinem lokalen Mac, nicht an einem Workspace-Share-Button und nicht an individuellen Freigaben.
+## Nicht mehr verwenden
 
-## Was das Plugin enthält
-
-Das Plugin enthält alles, was wiederverwendbar ist:
-
-- Mika-Skills
-- Onboarding-Logik
-- Current-State-Audit
-- Produkt- und Distribution-Reviews
-- Spec-, Design-, Engineering- und Code-Reviews
-- Website- und Web-App-MVP-Building
-- Browser-QA
-- Launch- und Release-Checks
-- Drift-Check
-- Retros
-- Editorial-Briefing
-- Templates für die Projektdateien
-
-Das Plugin enthält nicht die individuellen Founder-Unterlagen. Diese entstehen im jeweiligen Projektordner des Founders.
-
-## Founder-Kurzversion
+Keine lokalen Links verschicken wie:
 
 ```text
-1. Öffne https://github.com/Leopold-26/mika-sommercamp
-2. Kopiere die zwei Installationsbefehle aus INSTALL_FOR_FOUNDERS.md in Terminal.
-3. Starte Codex neu.
-4. Erstelle oder öffne deinen Projektordner.
-5. Schreibe: Starte Mika.
-6. Ziehe vorhandene Unterlagen in den Mika-Chat.
+codex://plugins/mika-sommercamp?marketplacePath=/Users/...
 ```
 
-## Updates
-
-Wenn Mika aktualisiert wurde:
-
-```bash
-codex plugin marketplace upgrade gruenderszene-sommercamp
-codex plugin add mika-sommercamp@gruenderszene-sommercamp
-```
-
-Danach Codex neu starten und einen neuen Chat öffnen.
+Diese Links funktionieren nur auf dem ursprünglichen Laptop.

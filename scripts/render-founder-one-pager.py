@@ -301,12 +301,12 @@ def render() -> None:
     y = PAGE_H - hero_h - 26
     c.setFillColor(BLACK)
     c.setFont("Helvetica-Bold", 19)
-    c.drawString(M, y, "Du brauchst: GitHub-Link, Terminal, Codex.")
+    c.drawString(M, y, "Du brauchst: GitHub-Link, Download ZIP, Codex.")
     y -= 25
     draw_wrapped(
         c,
-        "Mika wird einmal über GitHub installiert. Danach öffnest du deinen eigenen Projektordner in Codex, "
-        "schreibst Starte Mika und lässt dich durch Onboarding, Plan, Build und Launch führen.",
+        "Lade den Mika-Ordner von GitHub herunter, öffne den entpackten Ordner in Codex, "
+        "schreibe Starte Mika und lass dich durch Onboarding, Plan, Build und Launch führen.",
         M,
         y,
         PAGE_W - 2 * M,
@@ -323,9 +323,9 @@ def render() -> None:
     step_h = 72
     steps = [
         ("GitHub öffnen", "Öffne github.com/Leopold-26/mika-sommercamp. Der Link ist öffentlich und teilbar."),
-        ("Zwei Befehle ausführen", "Kopiere die Installationsbefehle aus INSTALL_FOR_FOUNDERS.md in Terminal."),
-        ("Codex neu starten", "Danach Codex einmal schließen und wieder öffnen, damit Mika sichtbar wird."),
-        ("Projektchat starten", "Öffne deinen Projektordner in Codex und schreibe: Starte Mika."),
+        ("ZIP herunterladen", "Klicke auf Code und dann auf Download ZIP."),
+        ("Ordner öffnen", "Entpacke die ZIP und öffne den ganzen Ordner in Codex."),
+        ("Mika starten", "Starte einen neuen Chat und schreibe: Starte Mika."),
     ]
     for i, (title, body) in enumerate(steps, start=1):
         col = (i - 1) % 2
@@ -343,7 +343,7 @@ def render() -> None:
     left_y = draw_bullets(
         c,
         [
-            "Alle Mika-Skills kommen aus dem GitHub-Plugin. Du musst keine Skill-Dateien anfassen.",
+            "Alle Mika-Skills sind schon im heruntergeladenen Ordner. Du musst keine Skill-Dateien anfassen.",
             "Mika erstellt die Projektdateien in deinem Ordner: Profil, Audit, Produktthese, Spec, Website-Brief, Distribution und 10-Wochen-Plan.",
             "Mika fragt nach, gibt Pushback, erklärt passende Tools und baut erst, wenn Ziel, Nutzer, Scope und Risiko klar genug sind.",
         ],
@@ -413,7 +413,7 @@ def render() -> None:
     y -= 23
     y = draw_wrapped(
         c,
-        "Bitte die Befehle in Terminal kopieren, nicht in den Codex-Chat. Danach arbeitest du wieder nur in Codex.",
+        "Bitte den ganzen entpackten Ordner in Codex öffnen. Danach arbeitest du nur noch im Mika-Chat.",
         M,
         y,
         PAGE_W - 2 * M,
@@ -439,7 +439,7 @@ def render() -> None:
     c.linkURL(REPO_URL, (M + 16, col_y - 50, M + full_w - 16, col_y - 34), relative=0)
     draw_wrapped(
         c,
-        "Im Repo findest du die Founder-Anleitung INSTALL_FOR_FOUNDERS.md. Du musst nichts herunterladen, um Mika als Plugin zu installieren.",
+        "Das Repo ist öffentlich. Du musst es nicht forken und kein Plugin installieren.",
         M + 16,
         col_y - 65,
         full_w - 32,
@@ -451,12 +451,12 @@ def render() -> None:
 
     c.setFillColor(BLACK)
     c.setFont("Helvetica-Bold", 13)
-    c.drawString(M, col_y - 112, "2. Terminal öffnen und diese zwei Befehle nacheinander ausführen")
+    c.drawString(M, col_y - 112, "2. ZIP herunterladen und entpacken")
     draw_command_box(
         c,
         [
-            "codex plugin marketplace add Leopold-26/mika-sommercamp --ref main",
-            "codex plugin add mika-sommercamp@gruenderszene-sommercamp",
+            "GitHub: Code -> Download ZIP",
+            "Dann die ZIP-Datei auf deinem Laptop entpacken.",
         ],
         M,
         col_y - 128,
@@ -465,7 +465,7 @@ def render() -> None:
     )
     draw_wrapped(
         c,
-        "Danach Codex einmal neu starten. Das ist wichtig, damit das Plugin und alle Mika-Skills geladen werden.",
+        "Danach hast du einen Mika-Ordner auf deinem Laptop. Öffne diesen ganzen Ordner in Codex.",
         M,
         col_y - 190,
         full_w,
@@ -476,18 +476,17 @@ def render() -> None:
     )
 
     y2 = col_y - 225
-    y2 = draw_detail_step(c, 3, "Projektordner erstellen", "Erstelle einen neuen Ordner für dein Sommercamp-Projekt. Der Ordner darf komplett leer sein.", M, y2, PAGE_W - 2 * M)
-    y2 = draw_detail_step(c, 4, "Ordner in Codex öffnen", "Öffne genau diesen Ordner in Codex und starte dort einen neuen Chat. So kann Mika Dateien in den richtigen Projektordner schreiben.", M, y2, PAGE_W - 2 * M)
-    y2 = draw_detail_step(c, 5, "Ersten Prompt senden", "Schreibe im Projektchat nur: Starte Mika. Danach richtet Mika docs/sommercamp/ ein und beginnt mit dem Onboarding.", M, y2, PAGE_W - 2 * M)
-    y2 = draw_detail_step(c, 6, "Unterlagen geben", "Ziehe vorhandene Materialien in den Chat oder schicke Links. Mika prüft sie zuerst, damit du nichts doppelt erklären musst.", M, y2, PAGE_W - 2 * M)
+    y2 = draw_detail_step(c, 3, "Ordner in Codex öffnen", "Öffne den entpackten Mika-Ordner in Codex. Wichtig: den ganzen Ordner öffnen, nicht nur einzelne Dateien.", M, y2, PAGE_W - 2 * M)
+    y2 = draw_detail_step(c, 4, "Ersten Prompt senden", "Starte im Ordner einen neuen Chat und schreibe nur: Starte Mika.", M, y2, PAGE_W - 2 * M)
+    y2 = draw_detail_step(c, 5, "Unterlagen geben", "Ziehe vorhandene Materialien in den Chat oder schicke Links. Mika prüft sie zuerst, damit du nichts doppelt erklären musst.", M, y2, PAGE_W - 2 * M)
 
     section_y = y2 - 12
     draw_section_title(c, "Wenn etwas nicht klappt", M, section_y, 238)
     draw_bullets(
         c,
         [
-            "Terminal sagt codex: command not found: Codex CLI in den Codex-Einstellungen installieren oder beim Team melden.",
-            "Mika ist nach dem Install nicht sichtbar: Codex neu starten und einen neuen Chat im Projektordner öffnen.",
+            "Mika startet nicht: Prüfe, ob du den ganzen entpackten Ordner in Codex geöffnet hast.",
+            "Du siehst nur einzelne Dateien: Zurückgehen und den gesamten Ordner öffnen.",
         ],
         M,
         section_y - 42,

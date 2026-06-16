@@ -304,9 +304,9 @@ def page_one(c: canvas.Canvas) -> None:
     section_title(c, "Founder-Flow", right_x, col_y, right_w)
     steps = [
         ("GitHub öffnen", "Founder öffnet den öffentlichen Repo-Link. Dieser Link ist teilbar."),
-        ("Installieren", "Founder kopiert zwei Terminal-Befehle aus INSTALL_FOR_FOUNDERS.md."),
-        ("Codex neu starten", "Founder startet Codex neu, damit Plugin und Skills geladen werden."),
-        ("Ordner öffnen", "Founder erstellt einen Projektordner und öffnet ihn in Codex."),
+        ("ZIP herunterladen", "Founder klickt auf Code und Download ZIP."),
+        ("Entpacken", "Founder entpackt die ZIP-Datei auf dem Laptop."),
+        ("Ordner öffnen", "Founder öffnet den ganzen entpackten Ordner in Codex."),
         ("Starten", "Founder schreibt: Starte Mika."),
     ]
     sy = col_y - 36
@@ -366,10 +366,10 @@ def page_two(c: canvas.Canvas) -> None:
     y = PAGE_H - 122
     c.setFillColor(BLACK)
     c.setFont("Helvetica-Bold", 18)
-    c.drawString(M, y, "Welche Fähigkeiten sind im Plugin?")
+    c.drawString(M, y, "Welche Fähigkeiten sind im Mika-Ordner?")
     draw_wrapped(
         c,
-        "Founder müssen diese Skill-Dateien nicht anfassen. Mika nutzt sie automatisch, sobald der Chat-Kontext danach verlangt.",
+        "Founder müssen diese Skill-Dateien nicht anfassen. Mika nutzt sie automatisch, sobald der heruntergeladene Ordner in Codex geöffnet ist.",
         M,
         y - 19,
         PAGE_W - 2 * M,
@@ -420,9 +420,9 @@ def page_three(c: canvas.Canvas) -> None:
 
     steps = [
         ("GitHub-Link schicken", "Per Mail, Slack oder Notion: github.com/Leopold-26/mika-sommercamp."),
-        ("PDF mitschicken", "Founder-PDF erklärt den Ablauf ohne Codex-Fachwörter: Link öffnen, Terminal, Codex, Projektchat."),
-        ("Founder installiert Mika", "Founder kopiert zwei Terminal-Befehle, startet Codex neu und öffnet den eigenen Projektordner."),
-        ("Founder startet Mika", "Im Projektchat schreibt der Founder: Starte Mika. Mika richtet dann docs/sommercamp/ ein."),
+        ("PDF mitschicken", "Founder-PDF erklärt den Ablauf ohne Codex-Fachwörter: Link öffnen, ZIP laden, Ordner öffnen."),
+        ("Founder öffnet Codex", "Founder entpackt die ZIP und öffnet den ganzen Ordner in Codex."),
+        ("Founder startet Mika", "Im neuen Chat schreibt der Founder: Starte Mika."),
         ("Unterlagen einsammeln", "Founder können Materialien direkt in den Chat ziehen; Mika auditiert sie vor weiteren Fragen."),
     ]
     sy = y - 56
@@ -432,7 +432,7 @@ def page_three(c: canvas.Canvas) -> None:
 
     c.setFillColor(BLACK)
     c.setFont("Helvetica-Bold", 12)
-    c.drawString(M, sy - 8, "Installationsbefehle für Founder")
+    c.drawString(M, sy - 8, "Founder-Kurzfassung")
     command_box(
         c,
         M,
@@ -440,8 +440,8 @@ def page_three(c: canvas.Canvas) -> None:
         PAGE_W - 2 * M,
         56,
         [
-            "codex plugin marketplace add Leopold-26/mika-sommercamp --ref main",
-            "codex plugin add mika-sommercamp@gruenderszene-sommercamp",
+            "GitHub öffnen -> Code -> Download ZIP -> entpacken",
+            "Ordner in Codex öffnen -> neuen Chat starten -> Starte Mika",
         ],
     )
     c.linkURL(REPO_URL, (M, sy - 89, PAGE_W - M, sy - 18), relative=0)
@@ -456,8 +456,8 @@ def page_three(c: canvas.Canvas) -> None:
         c,
         [
             "Der GitHub-Link bleibt gleich, solange das Repo öffentlich bleibt.",
-            "Nach Skill-, Icon- oder Textänderungen Version aktualisieren, committen und auf main pushen.",
-            "Bereits installierte Founder nutzen marketplace upgrade und starten danach einen neuen Chat.",
+            "Nach Skill-, Icon- oder Textänderungen committen und auf main pushen.",
+            "Founder laden danach bei Bedarf die ZIP erneut herunter.",
         ],
         M,
         col_top - 42,
@@ -471,7 +471,7 @@ def page_three(c: canvas.Canvas) -> None:
         [
             "Wenn Mika zu früh bauen will: Onboarding-Status, Produktthese und Distribution-Plan prüfen.",
             "Wenn Mika Unterlagen übersieht: Dateien in docs/sommercamp/00_uploads/ legen oder Links im Chat nachreichen.",
-            "Wenn neue Skills nicht sichtbar sind: Plugin aktualisieren und neuen Codex-Chat starten.",
+            "Wenn Skills nicht sichtbar sind: prüfen, ob der ganze entpackte Ordner in Codex geöffnet wurde.",
         ],
         right_x,
         col_top - 42,
