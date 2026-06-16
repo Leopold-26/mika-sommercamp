@@ -1,26 +1,34 @@
 {
   "name": "sommercamp-starter",
-  "version": "0.1.0",
-  "description": "Mika, the Gruenderszene Sommercamp founder assistant for Codex.",
+  "version": "0.1.0+codex.20260616094358",
+  "description": "Mika, the Gründerszene Sommercamp founder assistant for Codex.",
   "author": {
-    "name": "Gruenderszene Sommercamp"
+    "name": "Gründerszene Sommercamp"
   },
   "license": "MIT",
   "skills": "./skills/",
   "interface": {
     "displayName": "Mika Sommercamp",
-    "shortDescription": "Founder onboarding, product planning, distribution review, build coaching, and launch support.",
-    "longDescription": "Mika helps Sommercamp founders turn a consumer app idea into a 10-week execution plan, with mandatory onboarding, current-state audits, distribution-first pushback, Codex build guidance, launch readiness, retros, and editorial updates.",
-    "developerName": "Gruenderszene Sommercamp",
+    "shortDescription": "Founder onboarding, product planning, GStack-style reviews, build coaching, QA, and launch support.",
+    "longDescription": "Mika helps Sommercamp founders turn a consumer app idea into a 10-week execution plan, with mandatory onboarding, current-state audits, distribution-first pushback, spec building, engineering and design reviews, website and web-app MVP building, code review, browser QA, release support, retros, and editorial updates.",
+    "developerName": "Gründerszene Sommercamp",
     "category": "Productivity",
     "capabilities": [
       "Founder onboarding",
+      "Project setup",
+      "Spec building",
       "Product strategy",
       "Distribution planning",
+      "Engineering plan review",
+      "Design review",
+      "Website and web-app MVP building",
       "Build sprint coaching",
+      "Code review",
+      "Browser QA",
       "Launch readiness",
+      "Ship and release support",
       "Editorial updates"
     ],
-    "defaultPrompt": "Starte Mika und fuehre mich durch das Sommercamp-Onboarding."
+    "defaultPrompt": "Starte Mika und führe mich durch das Sommercamp-Onboarding."
   }
 }

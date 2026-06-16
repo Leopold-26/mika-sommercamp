@@ -345,7 +345,7 @@ def render() -> None:
         [
             "Alle Mika-Skills sind schon im heruntergeladenen Ordner. Du musst keine Skill-Dateien anfassen.",
             "Mika erstellt die Projektdateien in deinem Ordner: Profil, Audit, Produktthese, Spec, Website-Brief, Distribution und 10-Wochen-Plan.",
-            "Mika fragt nach, gibt Pushback, erklärt passende Tools und baut erst, wenn Ziel, Nutzer, Scope und Risiko klar genug sind.",
+            "Mika fragt nach, gibt Pushback, nutzt Scorecards und baut erst, wenn Ziel, Nutzer, Scope und Risiko klar genug sind.",
         ],
         M,
         left_y,

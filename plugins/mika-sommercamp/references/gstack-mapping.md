@@ -19,6 +19,21 @@ Mika borrows the useful workflow shape from GStack: think, plan, build, review, 
 | Retro | `growth-retro` | Review user learning, metrics, founder blockers, and next decision. |
 | Learn/memory | `founder-profile`, `spec`, `engineering-plan`, `design-review`, `weekly-retros`, `build-log`, `qa-report`, `release-log` | Keep durable context inside the repo. |
 
+## Parity Gap We Intentionally Close
+
+GStack quality comes from more than skill names. Mika must include the same depth pattern:
+
+- specialist role per phase,
+- uncomfortable premise challenge,
+- concrete alternatives,
+- 0-10 scorecards,
+- stop/proceed gates,
+- persistent artifacts,
+- evidence-based QA and launch checks,
+- retros that convert usage into the next decision.
+
+See `references/gstack-quality-bar.md` for the common standard every Mika skill should follow.
+
 ## Important Difference
 
 GStack is primarily an engineering operating system. Mika is a founder operating system. The main quality bar is not just code quality. It is whether the founder is moving toward launch, users, distribution, and learning.

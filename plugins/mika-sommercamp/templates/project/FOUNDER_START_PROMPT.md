@@ -9,7 +9,7 @@ Ich bin Sommercamp-Fellow. Bitte prüfe zuerst, welche Unterlagen ich bereits in
 
 Führe mich danach durch das Onboarding. Stelle lieber mehr gute Fragen als zu wenig. Wenn meine Idee zu breit, unklar oder nicht distribution-stark ist, gib mir bitte klaren Pushback und schlage eine bessere, kleinere Alternative vor.
 
-Nach dem Onboarding moechte ich von dir:
+Nach dem Onboarding möchte ich von dir:
 1. eine kurze Zusammenfassung meines aktuellen Stands,
 2. mein Founder-Profil,
 3. meine Produktthese,

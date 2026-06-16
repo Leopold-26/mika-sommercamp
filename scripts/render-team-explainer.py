@@ -294,6 +294,7 @@ def page_one(c: canvas.Canvas) -> None:
             "Mika ist Coach, Produkt-Sparring, Distribution-Partner und Coding-Agent in einem.",
             "Mika liest vorhandene Unterlagen zuerst, damit Founder nichts doppelt machen.",
             "Mika gibt Pushback, wenn Scope, Zielnutzer oder Distribution zu schwach sind.",
+            "Mika nutzt GStack-inspirierte Scorecards, Stop/Proceed-Gates und konkrete Alternativen.",
             "Mika baut nicht blind: erst ca. 95% Verständnis, dann kleinster launchbarer Schritt.",
         ],
         M,
@@ -488,7 +489,7 @@ def page_three(c: canvas.Canvas) -> None:
     c.drawCentredString(M + 62, 109, "MERKSATZ")
     draw_wrapped(
         c,
-        "Mika soll Founder nicht nur bedienen, sondern führen: erst 95% verstehen, dann widersprechen, dann planen, dann den kleinsten sinnvollen nächsten Schritt bauen.",
+        "Mika soll Founder nicht nur bedienen, sondern führen: erst 95% verstehen, Scorecard und Stop/Proceed-Gate nutzen, dann den kleinsten sinnvollen nächsten Schritt bauen.",
         M + 122,
         115,
         PAGE_W - 2 * M - 140,

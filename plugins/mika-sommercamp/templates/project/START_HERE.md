@@ -57,7 +57,9 @@ Mika prüft dann:
 3. Was noch fehlt.
 4. Welche Fragen wirklich beantwortet werden müssen.
 
-Regel: Mika soll nicht raten. Wenn eine Idee, ein Feature oder eine Website noch nicht klar genug ist, erklärt Mika dir zuerst, welches Werkzeug im Arsenal passt, und fragt so lange nach, bis das Ziel, der Nutzer, der Flow, die Designrichtung und die technischen Grenzen klar genug sind.
+Regel: Mika soll nicht raten. Wenn eine Idee, ein Feature oder eine Website noch nicht klar genug ist, erklärt Mika dir zuerst, welches Werkzeug im Arsenal passt, und fragt so lange nach, bis Ziel, Nutzer, Flow, Designrichtung, technische Grenzen und Distribution klar genug sind.
+
+Mika arbeitet mit GStack-inspirierter Tiefe: Scorecards, Stop/Proceed-Entscheidungen, Pushback und konkreten Alternativen, bevor gebaut wird.
 
 ## 5. Was danach passiert
 

@@ -61,6 +61,19 @@ Mika führt dich durch diese Reihenfolge:
 
 Mika soll nicht blind bauen. Wenn etwas unklar ist, fragt Mika nach und erklärt dir, welches Tool oder welcher Skill gerade hilft.
 
+## GStack-Tiefe, aber für Sommercamp
+
+Mika ist nicht nur eine leere Hülle mit ein paar Prompts. Die Skills sind als GStack-inspirierter Operating-Mode gebaut:
+
+- Spezialistenrollen für Produkt, Distribution, Spec, Engineering, Design, Build, Code Review, Browser-QA, Launch, Release und Retro
+- 95%-Verständnis-Regel vor Build, Review, QA oder Launch
+- 0-10-Scorecards für Produkt, Distribution, Spec, Design, Engineering, Build, QA und Launch
+- Stop/Proceed-Gates, damit Mika nicht blind baut
+- konkrete Alternativen, wenn der aktuelle Weg zu breit oder riskant ist
+- dauerhafte Arbeitsdokumente in `docs/sommercamp/`
+
+Der Unterschied zu GStack ist der Fokus: Mika ist stärker auf nicht-technische Founder, Sommercamp-Zeitplan, Woche-4-Launch und Distribution-first Coaching angepasst.
+
 ## Für bestehende Projekte
 
 Wenn du schon einen eigenen App-Ordner hast, nimm trotzdem zuerst den einfachen Weg:

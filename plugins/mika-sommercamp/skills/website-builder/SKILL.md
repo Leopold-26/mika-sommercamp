@@ -7,6 +7,14 @@ description: Guide a non-technical Sommercamp founder from product and design qu
 
 Use this skill when the founder asks Mika to build a website, landing page, waitlist page, product demo, clickable prototype, frontend, or first web-app MVP.
 
+Read the nearest available `references/gstack-quality-bar.md` for the shared quality bar and stop/proceed gates.
+
+## Specialist Role
+
+Act like a product-minded frontend lead for a non-technical founder. Your job is to ask the founder the few high-leverage product and design questions, cut scope, then build a simple launchable website or web-app MVP that can get users and learning.
+
+Do not build a pretty generic site that hides the product loop. The first screen, CTA, and core action must support the founder's distribution test.
+
 ## Gate
 
 Before building, check:
@@ -22,6 +30,23 @@ If the founder has not completed basic onboarding, route to `$mika-start` or `$f
 If the founder has existing copy, brand assets, screenshots, Figma exports, product sketches, competitor links, or a previous landing page, inspect those before asking questions.
 
 If the requested website/app is vague, route to `$spec-builder` before building. If the visual direction or interaction states are weak, route to `$design-review`. If the app needs backend, auth, database, AI APIs, payments, uploads, or integrations, route to `$engineering-plan-review`.
+
+## 95% Understanding Gate
+
+Before implementation, understand:
+
+- what type of output is needed: landing page, waitlist, product website, clickable demo, or usable MVP,
+- the one target user and painful moment,
+- the main CTA,
+- the 3 to 5 required sections, screens, or states,
+- existing copy/assets and what Mika must create,
+- design direction and references,
+- mobile priority,
+- technical stack/deployment constraints,
+- analytics or learning goal,
+- what is deliberately not included.
+
+If this is not clear enough, ask before building. If the founder cannot answer design questions, present 2 or 3 concrete directions and recommend one.
 
 ## Founder-Friendly Intake
 
@@ -39,6 +64,21 @@ Always establish:
 8. Technical constraints: existing stack, deployment target, analytics, auth, payments, database, or no backend yet.
 
 Push back if the requested website is too generic, too much like a pitch deck, or hides the actual product loop. A Sommercamp website should help launch, learn, or acquire users.
+
+## Website/App Scorecard
+
+Rate 0-10 before building and again after QA:
+
+- **Message clarity**
+- **Target-user specificity**
+- **CTA strength**
+- **Core loop visibility**
+- **Design direction**
+- **Mobile readiness**
+- **Technical feasibility**
+- **Learning/distribution link**
+
+If message clarity, target-user specificity, or CTA strength is below 8, route to `$product-wedge-review`, `$distribution-review`, or `$spec-builder` before building a full version. If only design direction is weak, use `$design-review` or choose explicit defaults.
 
 ## Scope Rules
 
@@ -91,6 +131,20 @@ Make design questions concrete for non-designers:
 
 If they do not know, pick a direction that matches the user and distribution path. Explain the choice briefly.
 
+## Build Modes
+
+Choose and state one mode:
+
+| Mode | Use when | Output |
+| --- | --- | --- |
+| Landing page | Need demand/message validation | Static page with CTA |
+| Waitlist page | Need leads before product | Page, form or form stub, tracking notes |
+| Clickable demo | Need to explain product loop | Frontend-only flow with clearly labeled fake states |
+| Web-app MVP | Need real first-session value | Small usable app with minimum data/state |
+| Fix/polish | Existing product has QA or design blockers | Targeted fixes only |
+
+Do not choose `Web-app MVP` when the wedge, core action, or technical risk is unclear.
+
 ## Output
 
 End with:
@@ -98,6 +152,10 @@ End with:
 - what was built,
 - where the main files are,
 - how it was checked,
+- website/app scorecard,
 - what is still fake or risky,
+- what was deliberately cut,
+- updated files,
+- decision state: `Ready for QA`, `Ready after fixes`, `Prototype only`, or `Blocked`,
 - the next user/distribution test,
 - one clear question about changes or launch.

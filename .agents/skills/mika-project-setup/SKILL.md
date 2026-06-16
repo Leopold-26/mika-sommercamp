@@ -7,6 +7,8 @@ description: Set up Mika's Sommercamp project workspace in the current folder by
 
 Use this skill when Mika is installed as a plugin and the current project does not yet contain the Sommercamp starter files.
 
+Read the nearest available `references/gstack-quality-bar.md` if available so the generated guidance preserves the shared quality standard.
+
 ## Goal
 
 Create the minimum durable project context so future Codex chats remember how to work with the founder.
@@ -49,6 +51,19 @@ If this repository already contains any of these files, do not overwrite them. R
 4. If there is already an `AGENTS.md`, append a concise Mika section instead of replacing the file.
 5. After setup, ask the founder to add current materials to `docs/sommercamp/00_uploads/` or point you to existing files.
 6. Continue with `$current-state-audit` or `$founder-onboarding`.
+
+## Quality Requirements
+
+The generated project guidance must preserve:
+
+- mandatory onboarding before build work,
+- 95% understanding rule,
+- audit of existing materials before repeated questions,
+- skill routing,
+- GStack-grade scorecards and stop/proceed gates,
+- durable updates to `docs/sommercamp/*.md`.
+
+Do not create a lightweight Mika shell that only contains empty docs. The workspace must include enough guidance for later Codex chats to continue the full Mika operating loop.
 
 ## Output
 
